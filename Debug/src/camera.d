@@ -35,9 +35,11 @@ src/camera.o: ../src/camera.c \
  /Users/daymoon/Documents/workspace/Bluepill/inc/services.h \
  /Users/daymoon/Documents/workspace/Bluepill/inc/delay.h \
  /Users/daymoon/Documents/workspace/Bluepill/inc/leds.h \
+ /Users/daymoon/Documents/workspace/Bluepill/inc/camera.h \
  /Users/daymoon/Documents/workspace/Bluepill/inc/ili9341.h \
  /Users/daymoon/Documents/workspace/Bluepill/inc/spi.h \
- /Users/daymoon/Documents/workspace/Bluepill/inc/i2c.h
+ /Users/daymoon/Documents/workspace/Bluepill/inc/i2c.h \
+ /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Libraries/STM32F10x_StdPeriph_Driver/inc/misc.h
 
 /Users/daymoon/Documents/workspace/Bluepill/inc/camera.h:
 
@@ -111,8 +113,12 @@ src/camera.o: ../src/camera.c \
 
 /Users/daymoon/Documents/workspace/Bluepill/inc/leds.h:
 
+/Users/daymoon/Documents/workspace/Bluepill/inc/camera.h:
+
 /Users/daymoon/Documents/workspace/Bluepill/inc/ili9341.h:
 
 /Users/daymoon/Documents/workspace/Bluepill/inc/spi.h:
 
 /Users/daymoon/Documents/workspace/Bluepill/inc/i2c.h:
+
+/Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Libraries/STM32F10x_StdPeriph_Driver/inc/misc.h:

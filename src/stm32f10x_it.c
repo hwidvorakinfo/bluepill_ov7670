@@ -24,6 +24,9 @@
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f10x_it.h"
 #include "scheduler.h"
+#include "defs.h"
+#include "camera.h"
+#include "services.h"
 
 /** @addtogroup STM32F10x_StdPeriph_Template
   * @{
@@ -158,6 +161,24 @@ void SysTick_Handler(void)
 /**
   * @}
   */ 
+
+void EXTI9_5_IRQHandler(void)
+{
+  if(EXTI_GetITStatus(EXTI_Line7) != RESET)
+  {
+	  // uloz vzorek obrazku
+	  camera_store_sample();
+
+	  // zalozeni sluzby na odstraneni zakmitu tlacitka
+	  if(Scheduler_Add_Task(button_service, (SCHEDULERPERIOD * 10 MILISEKUND), 0) == SCH_MAX_TASKS)
+	  {
+	  		// chyba pri zalozeni service
+	  }
+
+    /* Clear the  EXTI line 7 pending bit */
+    EXTI_ClearITPendingBit(EXTI_Line7);
+  }
+}
 
 
 /******************* (C) COPYRIGHT 2011 STMicroelectronics *****END OF FILE****/

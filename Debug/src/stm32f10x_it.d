@@ -26,7 +26,19 @@ src/stm32f10x_it.o: ../src/stm32f10x_it.c \
  /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_tim.h \
  /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_usart.h \
  /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_wwdg.h \
- /Users/daymoon/Documents/workspace/Bluepill/inc/scheduler.h
+ /Users/daymoon/Documents/workspace/Bluepill/inc/scheduler.h \
+ /Users/daymoon/Documents/workspace/Bluepill/inc/defs.h \
+ /Users/daymoon/Documents/workspace/Bluepill/inc/camera.h \
+ /Users/daymoon/Documents/workspace/Bluepill/inc/defs.h \
+ /Users/daymoon/Documents/workspace/Bluepill/inc/ov7670.h \
+ /Users/daymoon/Documents/workspace/Bluepill/inc/stm32f10x_conf.h \
+ /Users/daymoon/Documents/workspace/Bluepill/inc/application.h \
+ /Users/daymoon/Documents/workspace/Bluepill/inc/services.h \
+ /Users/daymoon/Documents/workspace/Bluepill/inc/delay.h \
+ /Users/daymoon/Documents/workspace/Bluepill/inc/scheduler.h \
+ /Users/daymoon/Documents/workspace/Bluepill/inc/services.h \
+ /Users/daymoon/Documents/workspace/Bluepill/inc/leds.h \
+ /Users/daymoon/Documents/workspace/Bluepill/inc/camera.h
 
 /Users/daymoon/Documents/workspace/Bluepill/inc/stm32f10x_it.h:
 
@@ -83,3 +95,27 @@ src/stm32f10x_it.o: ../src/stm32f10x_it.c \
 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Libraries/STM32F10x_StdPeriph_Driver/inc/stm32f10x_wwdg.h:
 
 /Users/daymoon/Documents/workspace/Bluepill/inc/scheduler.h:
+
+/Users/daymoon/Documents/workspace/Bluepill/inc/defs.h:
+
+/Users/daymoon/Documents/workspace/Bluepill/inc/camera.h:
+
+/Users/daymoon/Documents/workspace/Bluepill/inc/defs.h:
+
+/Users/daymoon/Documents/workspace/Bluepill/inc/ov7670.h:
+
+/Users/daymoon/Documents/workspace/Bluepill/inc/stm32f10x_conf.h:
+
+/Users/daymoon/Documents/workspace/Bluepill/inc/application.h:
+
+/Users/daymoon/Documents/workspace/Bluepill/inc/services.h:
+
+/Users/daymoon/Documents/workspace/Bluepill/inc/delay.h:
+
+/Users/daymoon/Documents/workspace/Bluepill/inc/scheduler.h:
+
+/Users/daymoon/Documents/workspace/Bluepill/inc/services.h:
+
+/Users/daymoon/Documents/workspace/Bluepill/inc/leds.h:
+
+/Users/daymoon/Documents/workspace/Bluepill/inc/camera.h:

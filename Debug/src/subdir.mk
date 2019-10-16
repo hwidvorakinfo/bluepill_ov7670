@@ -13,9 +13,11 @@ C_SRCS += \
 ../src/main.c \
 ../src/mcuperipherals.c \
 ../src/ov7670.c \
+../src/ov7720.c \
 ../src/scheduler.c \
 ../src/services.c \
 ../src/spi.c \
+../src/spi_sram.c \
 ../src/stm32f10x_it.c \
 ../src/system_stm32f10x.c \
 ../src/timer.c 
@@ -30,9 +32,11 @@ OBJS += \
 ./src/main.o \
 ./src/mcuperipherals.o \
 ./src/ov7670.o \
+./src/ov7720.o \
 ./src/scheduler.o \
 ./src/services.o \
 ./src/spi.o \
+./src/spi_sram.o \
 ./src/stm32f10x_it.o \
 ./src/system_stm32f10x.o \
 ./src/timer.o 
@@ -47,9 +51,11 @@ C_DEPS += \
 ./src/main.d \
 ./src/mcuperipherals.d \
 ./src/ov7670.d \
+./src/ov7720.d \
 ./src/scheduler.d \
 ./src/services.d \
 ./src/spi.d \
+./src/spi_sram.d \
 ./src/stm32f10x_it.d \
 ./src/system_stm32f10x.d \
 ./src/timer.d 

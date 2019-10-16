@@ -32,6 +32,8 @@ src/mcuperipherals.o: ../src/mcuperipherals.c \
  /Users/daymoon/Documents/workspace/Bluepill/inc/timer.h \
  /Users/daymoon/Documents/workspace/Bluepill/inc/i2c.h \
  /Users/daymoon/Documents/workspace/Bluepill/inc/spi.h \
+ /Users/daymoon/Documents/workspace/Bluepill/inc/spi_sram.h \
+ /Users/daymoon/Documents/workspace/Bluepill/inc/application.h \
  /Users/daymoon/Documents/workspace/Bluepill/inc/application.h
 
 /Users/daymoon/Documents/workspace/Bluepill/inc/mcuperipherals.h:
@@ -99,5 +101,9 @@ src/mcuperipherals.o: ../src/mcuperipherals.c \
 /Users/daymoon/Documents/workspace/Bluepill/inc/i2c.h:
 
 /Users/daymoon/Documents/workspace/Bluepill/inc/spi.h:
+
+/Users/daymoon/Documents/workspace/Bluepill/inc/spi_sram.h:
+
+/Users/daymoon/Documents/workspace/Bluepill/inc/application.h:
 
 /Users/daymoon/Documents/workspace/Bluepill/inc/application.h:

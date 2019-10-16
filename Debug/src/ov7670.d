@@ -35,7 +35,8 @@ src/ov7670.o: ../src/ov7670.c \
  /Users/daymoon/Documents/workspace/Bluepill/inc/scheduler.h \
  /Users/daymoon/Documents/workspace/Bluepill/inc/services.h \
  /Users/daymoon/Documents/workspace/Bluepill/inc/delay.h \
- /Users/daymoon/Documents/workspace/Bluepill/inc/leds.h
+ /Users/daymoon/Documents/workspace/Bluepill/inc/leds.h \
+ /Users/daymoon/Documents/workspace/Bluepill/inc/camera.h
 
 /Users/daymoon/Documents/workspace/Bluepill/inc/ov7670.h:
 
@@ -110,3 +111,5 @@ src/ov7670.o: ../src/ov7670.c \
 /Users/daymoon/Documents/workspace/Bluepill/inc/delay.h:
 
 /Users/daymoon/Documents/workspace/Bluepill/inc/leds.h:
+
+/Users/daymoon/Documents/workspace/Bluepill/inc/camera.h:

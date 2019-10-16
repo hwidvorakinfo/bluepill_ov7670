@@ -11,6 +11,7 @@
 //#include "usart.h"
 #include "i2c.h"
 #include "spi.h"
+#include "spi_sram.h"
 #include "application.h"
 
 // inicializuje vsechny mozne vystupy na vsech portech a vstupy do ADC
@@ -22,4 +23,5 @@ void mcuperipherals_init(void)
 	spi_init();
 	//usart_config();
 	i2c_init();
+	//spi_sram_init();
 }

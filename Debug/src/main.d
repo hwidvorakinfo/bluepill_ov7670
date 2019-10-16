@@ -33,10 +33,11 @@ src/main.o: ../src/main.c \
  /Users/daymoon/Documents/workspace/Bluepill/inc/leds.h \
  /Users/daymoon/Documents/workspace/Bluepill/inc/application.h \
  /Users/daymoon/Documents/workspace/Bluepill/inc/stm32f10x_conf.h \
+ /Users/daymoon/Documents/workspace/Bluepill/inc/camera.h \
+ /Users/daymoon/Documents/workspace/Bluepill/inc/ov7670.h \
  /Users/daymoon/Documents/workspace/Bluepill/inc/ili9341.h \
  /Users/daymoon/Documents/workspace/Bluepill/inc/mcuperipherals.h \
- /Users/daymoon/Documents/workspace/Bluepill/inc/camera.h \
- /Users/daymoon/Documents/workspace/Bluepill/inc/ov7670.h
+ /Users/daymoon/Documents/workspace/Bluepill/inc/camera.h
 
 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x/stm32f10x.h:
 
@@ -106,10 +107,12 @@ src/main.o: ../src/main.c \
 
 /Users/daymoon/Documents/workspace/Bluepill/inc/stm32f10x_conf.h:
 
+/Users/daymoon/Documents/workspace/Bluepill/inc/camera.h:
+
+/Users/daymoon/Documents/workspace/Bluepill/inc/ov7670.h:
+
 /Users/daymoon/Documents/workspace/Bluepill/inc/ili9341.h:
 
 /Users/daymoon/Documents/workspace/Bluepill/inc/mcuperipherals.h:
 
 /Users/daymoon/Documents/workspace/Bluepill/inc/camera.h:
-
-/Users/daymoon/Documents/workspace/Bluepill/inc/ov7670.h:

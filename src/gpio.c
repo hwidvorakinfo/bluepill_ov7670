@@ -87,7 +87,7 @@ void gpio_init(void)
 #ifdef GPIOB_INPUT
 	// GPIO vstupy na PBx
 	GPIO_InitStructure.GPIO_Pin = IN_PORT_B_INPUTS;
-	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPD;
+	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IPU;
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_10MHz;
 	GPIO_Init(IN_PORT_B, &GPIO_InitStructure);
 #endif

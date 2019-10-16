@@ -35,6 +35,8 @@ src/ili9341.o: ../src/ili9341.c \
  /Users/daymoon/Documents/workspace/Bluepill/inc/delay.h \
  /Users/daymoon/Documents/workspace/Bluepill/inc/leds.h \
  /Users/daymoon/Documents/workspace/Bluepill/inc/application.h \
+ /Users/daymoon/Documents/workspace/Bluepill/inc/camera.h \
+ /Users/daymoon/Documents/workspace/Bluepill/inc/ov7670.h \
  /Users/daymoon/Documents/workspace/Bluepill/inc/spi.h
 
 /Users/daymoon/Documents/workspace/Bluepill/inc/ili9341.h:
@@ -108,5 +110,9 @@ src/ili9341.o: ../src/ili9341.c \
 /Users/daymoon/Documents/workspace/Bluepill/inc/leds.h:
 
 /Users/daymoon/Documents/workspace/Bluepill/inc/application.h:
+
+/Users/daymoon/Documents/workspace/Bluepill/inc/camera.h:
+
+/Users/daymoon/Documents/workspace/Bluepill/inc/ov7670.h:
 
 /Users/daymoon/Documents/workspace/Bluepill/inc/spi.h:

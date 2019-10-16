@@ -12,7 +12,7 @@
 #include "defs.h"
 #include "stm32f10x_conf.h"
 
-#define OUTPUT_CLOCKS		OUT_PORT_A_CLK | OUT_PORT_B_CLK | OUT_PORT_C_CLK | OUT_PORT_D_CLK
+#define OUTPUT_CLOCKS		OUT_PORT_A_CLK | OUT_PORT_B_CLK | OUT_PORT_C_CLK | OUT_PORT_D_CLK | RCC_APB2Periph_AFIO
 
 // modifikace dle verze desky, odkomentovat #define nize podle pozadovane verze
 // - VERSION_A je prvni verze
@@ -30,36 +30,50 @@
 #define OUT_PORT_D_CLK			RCC_APB2Periph_GPIOD
 
 // vystupy na PAx
-//#define GPIOA_INIT
+#define GPIOA_INIT
 #ifdef GPIOA_INIT
 #define OUT_PORT_A				GPIOA
+#define LCD_DC_PORT				OUT_PORT_A
+#define LCD_DC_PIN				GPIO_Pin_12
 
 // PA14 SWDCLK
 //#define RESERVED0				GPIO_Pin_14
 // PA13 SWDIO
 //#define RESERVED1				GPIO_Pin_13
 
-#define OUT_PORT_A_OUTPUTS
-#define GPIOA_RESET_INIT
-	#define OUT_PORT_A_RESET_INIT
+#define OUT_PORT_A_OUTPUTS		LCD_DC_PIN
+//#define GPIOA_RESET_INIT
+	#define OUT_PORT_A_RESET_INIT	0
 #define GPIOA_SET_INIT
-	#define OUT_PORT_A_SET_INIT
+	#define OUT_PORT_A_SET_INIT		LCD_DC_PIN
 #endif
 
 // vystupy na PBx
 #define GPIOB_INIT
 #ifdef GPIOB_INIT
 #define OUT_PORT_B				GPIOB
-#define LCD_DC_PORT				OUT_PORT_B
-#define LCD_DC_PIN				GPIO_Pin_14
+//#define LCD_DC_PORT				OUT_PORT_B
+//#define LCD_DC_PIN				GPIO_Pin_14
 #define LCD_CS_PORT				OUT_PORT_B
 #define LCD_CS_PIN				GPIO_Pin_12
+#define SRAM_CS_PORT			OUT_PORT_B
+#define SRAM_CS_PIN				GPIO_Pin_6
+#define SRAM_SIO2_PORT			OUT_PORT_B
+#define SRAM_SIO2_PIN			GPIO_Pin_3
+#define SRAM_SIO3_PORT			OUT_PORT_B
+#define SRAM_SIO3_PIN			GPIO_Pin_4
+#define LEDRUN_PORT				OUT_PORT_B
+#define LEDRUN_PIN				GPIO_Pin_8
+#define LEDDET_PORT				OUT_PORT_B
+#define LEDDET_PIN				GPIO_Pin_9
 
-#define OUT_PORT_B_OUTPUTS		LCD_DC_PIN | LCD_CS_PIN
+
+
+#define OUT_PORT_B_OUTPUTS		LCD_CS_PIN | SRAM_CS_PIN | SRAM_SIO2_PIN | SRAM_SIO3_PIN | LEDRUN_PIN | LEDDET_PIN
 //#define GPIOB_RESET_INIT
 	#define OUT_PORT_B_RESET_INIT	0
 #define GPIOB_SET_INIT
-	#define OUT_PORT_B_SET_INIT		LCD_DC_PIN | LCD_CS_PIN
+	#define OUT_PORT_B_SET_INIT		LCD_CS_PIN | SRAM_CS_PIN | SRAM_SIO2_PIN | SRAM_SIO3_PIN | LEDRUN_PIN | LEDDET_PIN
 #endif
 
 // vystupy na PCx
@@ -122,17 +136,15 @@
 #endif
 
 // vstupy na PBx
-//#define GPIOB_INPUT
+#define GPIOB_INPUT
 #ifdef GPIOB_INPUT
 #define IN_PORT_B				GPIOB
-#define NTCFAULT_PORT			IIN_PORT_B
-#define Z_MIN_PORT				IN_PORT_B
-#define NTCFAULT_PIN			GPIO_Pin_8
-#define Z_MIN_PIN				GPIO_Pin_12
-#define MAXTEMP_PORT			IN_PORT_B
-#define MAXTEMP_PIN				GPIO_Pin_9
+#define BUTTON_PORT				IN_PORT_B
+#define BUTTON_PIN				GPIO_Pin_7
+#define BUTTON_PORTSOURCE		GPIO_PortSourceGPIOB
+#define BUTTON_PINSOURCE		GPIO_PinSource7
 
-#define IN_PORT_B_INPUTS		NTCFAULT_PIN | Z_MIN_PIN | MAXTEMP_PIN
+#define IN_PORT_B_INPUTS		BUTTON_PIN
 #endif
 
 // vstupy na PCx
@@ -247,14 +259,13 @@
 #define LCD_MOSI_CLK				OUT_PORT_B_CLK
 #endif //SPI2_MOSI
 
-//#define SPI1_MISO
-#ifdef SPI1_MISO
-#define LCD_MISO_SOURCE				GPIO_PinSource6
-#define LCD_MISO_PIN				GPIO_Pin_6
-#define LCD_MISO_PORT				GPIOA
-#define LCD_MISO_CLK				RCC_AHBPeriph_GPIOA
-#define LCD_MISO_AF					GPIO_AF_SPI1
-#endif // SPI1_MISO
+#define SPI2_MISO
+#ifdef SPI2_MISO
+#define LCD_MISO_SOURCE				GPIO_PinSource14
+#define LCD_MISO_PIN				GPIO_Pin_14
+#define LCD_MISO_PORT				GPIOB
+#define LCD_MISO_CLK				OUT_PORT_B_CLK
+#endif // SPI2_MISO
 #endif //SPI
 
 //#define I2C

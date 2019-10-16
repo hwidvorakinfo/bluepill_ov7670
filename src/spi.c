@@ -16,11 +16,11 @@ void spi_init(void)
 	SPI_InitTypeDef   SPI_InitStructure;
 
 	// hodiny pro piny a periferii
-	RCC_APB2PeriphClockCmd(LCD_MOSI_CLK | LCD_SCK_CLK, ENABLE);
+	RCC_APB2PeriphClockCmd(LCD_MOSI_CLK | LCD_MISO_CLK | LCD_SCK_CLK, ENABLE);
 	RCC_APB1PeriphClockCmd(LCD_SPI_CLK, ENABLE);
 
-	// piny SPI
-	GPIO_InitStructure.GPIO_Pin = LCD_SCK_PIN | LCD_MOSI_PIN;
+	// piny SPI SCK, MOSI, MISO
+	GPIO_InitStructure.GPIO_Pin = LCD_SCK_PIN | LCD_MOSI_PIN | LCD_MISO_PIN;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
 	GPIO_Init(LCD_SCK_PORT, &GPIO_InitStructure);
@@ -33,18 +33,18 @@ void spi_init(void)
 	/* SPI configuration -------------------------------------------------------*/
 	SPI_I2S_DeInit(LCD_SPI);
 
-	SPI_InitStructure.SPI_Direction = SPI_Direction_1Line_Tx;
+	SPI_InitStructure.SPI_Direction = SPI_Direction_2Lines_FullDuplex;
 	SPI_InitStructure.SPI_Mode = SPI_Mode_Master;
 	SPI_InitStructure.SPI_DataSize = SPI_DataSize_8b;
-	SPI_InitStructure.SPI_CPOL = SPI_CPOL_Low;
-	SPI_InitStructure.SPI_CPHA = SPI_CPHA_1Edge;
+	SPI_InitStructure.SPI_CPOL = SPI_CPOL_Low; //SPI_CPOL_Low;
+	SPI_InitStructure.SPI_CPHA = SPI_CPHA_1Edge;//SPI_CPHA_1Edge;
 	SPI_InitStructure.SPI_NSS = SPI_NSS_Soft;
 	// APB1=36MHz, optimalni je frekvence kolem 4MHz pro dlouhe vedeni
 	// 36000kHz/8=4.25MHz
 	// 36000kHz/16=2.25MHz
 	// 36000kHz/4=9MHz
 	// 36000kHz/2=18MHz
-	SPI_InitStructure.SPI_BaudRatePrescaler = ILISPIPRESCALER;
+	SPI_InitStructure.SPI_BaudRatePrescaler = SPI_BaudRatePrescaler_2; //ILISPIPRESCALER;
 	SPI_InitStructure.SPI_FirstBit = SPI_FirstBit_MSB;
 	SPI_InitStructure.SPI_CRCPolynomial = 7;
 	SPI_Init(LCD_SPI, &SPI_InitStructure);

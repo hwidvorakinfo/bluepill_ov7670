@@ -32,7 +32,10 @@ src/services.o: ../src/services.c \
  /Users/daymoon/Documents/workspace/Bluepill/inc/leds.h \
  /Users/daymoon/Documents/workspace/Bluepill/inc/defs.h \
  /Users/daymoon/Documents/workspace/Bluepill/inc/application.h \
- /Users/daymoon/Documents/workspace/Bluepill/inc/stm32f10x_conf.h
+ /Users/daymoon/Documents/workspace/Bluepill/inc/stm32f10x_conf.h \
+ /Users/daymoon/Documents/workspace/Bluepill/inc/camera.h \
+ /Users/daymoon/Documents/workspace/Bluepill/inc/ov7670.h \
+ /Users/daymoon/Documents/workspace/Bluepill/inc/ili9341.h
 
 /Users/daymoon/Documents/workspace/Bluepill/inc/services.h:
 
@@ -101,3 +104,9 @@ src/services.o: ../src/services.c \
 /Users/daymoon/Documents/workspace/Bluepill/inc/application.h:
 
 /Users/daymoon/Documents/workspace/Bluepill/inc/stm32f10x_conf.h:
+
+/Users/daymoon/Documents/workspace/Bluepill/inc/camera.h:
+
+/Users/daymoon/Documents/workspace/Bluepill/inc/ov7670.h:
+
+/Users/daymoon/Documents/workspace/Bluepill/inc/ili9341.h:

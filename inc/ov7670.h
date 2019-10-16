@@ -5,16 +5,18 @@
 #include "defs.h"
 #include "stm32f10x_conf.h"
 
-enum RESOLUTION{VGA,QVGA,QQVGA};
-enum COLORSPACE{YUV422,RGB565,BAYER_RGB};
+enum OV7670_RESOLUTION {OV7670_VGA,OV7670_QVGA,OV7670_QQVGA, OV7670_CUSTOM};
+enum OV7670_COLORSPACE {OV7670_YUV422,OV7670_RGB565,OV7670_BAYER_RGB};
 
+/*
 struct regval_list{
 	uint8_t reg_num;
 	uint8_t value;
 };
+*/
 
-void ov7670_setColorSpace(enum COLORSPACE color);
-void ov7670_setRes(enum RESOLUTION res);
+void ov7670_setColorSpace(enum OV7670_COLORSPACE color);
+void ov7670_setRes(enum OV7670_RESOLUTION res);
 void ov7670_init(void);
 void ov7670_colorbarpattern(void);
 

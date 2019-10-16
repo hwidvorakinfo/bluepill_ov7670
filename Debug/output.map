@@ -1,7 +1,11 @@
 Archive member included to satisfy reference by file (symbol)
 
+/Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+                              src/camera.o (NVIC_Init)
 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
                               src/camera.o (DMA_DeInit)
+/Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+                              src/camera.o (EXTI_Init)
 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
                               src/camera.o (GPIO_Init)
 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
@@ -113,12 +117,23 @@ Discarded input sections
  .group         0x0000000000000000        0xc src/camera.o
  .group         0x0000000000000000        0xc src/camera.o
  .group         0x0000000000000000        0xc src/camera.o
+ .group         0x0000000000000000        0xc src/camera.o
  .text          0x0000000000000000        0x0 src/camera.o
- .data          0x0000000000000000        0x0 src/camera.o
+ .text.camera_get_image
+                0x0000000000000000      0x15c src/camera.o
+ .text.camera_button_config
+                0x0000000000000000       0x44 src/camera.o
+ .text.camera_set_detected_led
+                0x0000000000000000       0x18 src/camera.o
+ .text.camera_set_run_led
+                0x0000000000000000       0x18 src/camera.o
  .text.camera_GetStatus
                 0x0000000000000000        0x4 src/camera.o
  .text.camera_spidma_transfer
                 0x0000000000000000       0x70 src/camera.o
+ .group         0x0000000000000000        0xc src/delay.o
+ .group         0x0000000000000000        0xc src/delay.o
+ .group         0x0000000000000000        0xc src/delay.o
  .group         0x0000000000000000        0xc src/delay.o
  .group         0x0000000000000000        0xc src/delay.o
  .group         0x0000000000000000        0xc src/delay.o
@@ -195,6 +210,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x10 src/delay.o
  .debug_macro   0x0000000000000000       0x35 src/delay.o
  .debug_macro   0x0000000000000000       0x64 src/delay.o
+ .debug_macro   0x0000000000000000      0x148 src/delay.o
  .debug_macro   0x0000000000000000       0x22 src/delay.o
  .debug_macro   0x0000000000000000       0x10 src/delay.o
  .group         0x0000000000000000        0xc src/gpio.o
@@ -272,7 +288,9 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x10 src/gpio.o
  .debug_macro   0x0000000000000000       0x35 src/gpio.o
  .debug_macro   0x0000000000000000       0x64 src/gpio.o
- .debug_macro   0x0000000000000000       0xe3 src/gpio.o
+ .debug_macro   0x0000000000000000      0x197 src/gpio.o
+ .debug_macro   0x0000000000000000       0x8b src/gpio.o
+ .group         0x0000000000000000        0xc src/i2c.o
  .group         0x0000000000000000        0xc src/i2c.o
  .group         0x0000000000000000        0xc src/i2c.o
  .group         0x0000000000000000        0xc src/i2c.o
@@ -356,8 +374,13 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x10 src/i2c.o
  .debug_macro   0x0000000000000000       0x35 src/i2c.o
  .debug_macro   0x0000000000000000       0x64 src/i2c.o
- .debug_macro   0x0000000000000000       0xe3 src/i2c.o
- .debug_macro   0x0000000000000000      0x13c src/i2c.o
+ .debug_macro   0x0000000000000000      0x197 src/i2c.o
+ .debug_macro   0x0000000000000000       0x10 src/i2c.o
+ .debug_macro   0x0000000000000000      0x3a8 src/i2c.o
+ .debug_macro   0x0000000000000000      0x148 src/i2c.o
+ .group         0x0000000000000000        0xc src/ili9341.o
+ .group         0x0000000000000000        0xc src/ili9341.o
+ .group         0x0000000000000000        0xc src/ili9341.o
  .group         0x0000000000000000        0xc src/ili9341.o
  .group         0x0000000000000000        0xc src/ili9341.o
  .group         0x0000000000000000        0xc src/ili9341.o
@@ -419,37 +442,33 @@ Discarded input sections
  .data          0x0000000000000000        0x0 src/ili9341.o
  .bss           0x0000000000000000        0x0 src/ili9341.o
  .text.ili_set_addr_window.constprop.1
-                0x0000000000000000      0x148 src/ili9341.o
+                0x0000000000000000      0x14c src/ili9341.o
  .text.ili_camera_init
-                0x0000000000000000      0x15c src/ili9341.o
+                0x0000000000000000      0x160 src/ili9341.o
  .text.ili_set_rotation
-                0x0000000000000000       0x84 src/ili9341.o
+                0x0000000000000000       0x88 src/ili9341.o
  .text.ili_set_addr_window
-                0x0000000000000000      0x154 src/ili9341.o
+                0x0000000000000000      0x158 src/ili9341.o
  .text.ili_draw_pixel
-                0x0000000000000000      0x174 src/ili9341.o
+                0x0000000000000000      0x178 src/ili9341.o
+ .text.ili_draw_line
+                0x0000000000000000      0x3d0 src/ili9341.o
  .text.ili_draw_full_rectangle
-                0x0000000000000000      0x1b8 src/ili9341.o
+                0x0000000000000000      0x1c0 src/ili9341.o
  .text.ili_draw_rectangle
                 0x0000000000000000       0x4c src/ili9341.o
- .text.ili_print_char
-                0x0000000000000000      0x244 src/ili9341.o
- .text.ili_text_print
-                0x0000000000000000       0xa8 src/ili9341.o
  .text.ili_draw_circle
-                0x0000000000000000      0x9c0 src/ili9341.o
+                0x0000000000000000      0x9e8 src/ili9341.o
  .text.ili_draw_full_circle
                 0x0000000000000000       0xd4 src/ili9341.o
  .text.RST_active
                 0x0000000000000000        0x4 src/ili9341.o
  .text.RST_deactive
                 0x0000000000000000        0x4 src/ili9341.o
- .text.CS_high  0x0000000000000000       0x1c src/ili9341.o
  .text.DC_instruction
                 0x0000000000000000       0x10 src/ili9341.o
  .text.send_data
-                0x0000000000000000       0x3c src/ili9341.o
- .rodata        0x0000000000000000      0x900 src/ili9341.o
+                0x0000000000000000       0x40 src/ili9341.o
  .debug_macro   0x0000000000000000      0xa66 src/ili9341.o
  .debug_macro   0x0000000000000000       0x5c src/ili9341.o
  .debug_macro   0x0000000000000000       0x22 src/ili9341.o
@@ -485,10 +504,16 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x10 src/ili9341.o
  .debug_macro   0x0000000000000000       0x35 src/ili9341.o
  .debug_macro   0x0000000000000000       0x64 src/ili9341.o
- .debug_macro   0x0000000000000000       0xe3 src/ili9341.o
+ .debug_macro   0x0000000000000000      0x197 src/ili9341.o
  .debug_macro   0x0000000000000000       0x16 src/ili9341.o
+ .debug_macro   0x0000000000000000       0x10 src/ili9341.o
+ .debug_macro   0x0000000000000000      0x3a8 src/ili9341.o
+ .debug_macro   0x0000000000000000      0x148 src/ili9341.o
  .debug_macro   0x0000000000000000       0x22 src/ili9341.o
  .debug_macro   0x0000000000000000       0x10 src/ili9341.o
+ .group         0x0000000000000000        0xc src/leds.o
+ .group         0x0000000000000000        0xc src/leds.o
+ .group         0x0000000000000000        0xc src/leds.o
  .group         0x0000000000000000        0xc src/leds.o
  .group         0x0000000000000000        0xc src/leds.o
  .group         0x0000000000000000        0xc src/leds.o
@@ -568,8 +593,12 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x16 src/leds.o
  .debug_macro   0x0000000000000000       0x64 src/leds.o
  .debug_macro   0x0000000000000000       0x10 src/leds.o
- .debug_macro   0x0000000000000000       0xdd src/leds.o
+ .debug_macro   0x0000000000000000      0x191 src/leds.o
+ .debug_macro   0x0000000000000000       0x10 src/leds.o
+ .debug_macro   0x0000000000000000      0x3a8 src/leds.o
+ .debug_macro   0x0000000000000000      0x148 src/leds.o
  .debug_macro   0x0000000000000000       0x22 src/leds.o
+ .group         0x0000000000000000        0xc src/main.o
  .group         0x0000000000000000        0xc src/main.o
  .group         0x0000000000000000        0xc src/main.o
  .group         0x0000000000000000        0xc src/main.o
@@ -652,11 +681,13 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x16 src/main.o
  .debug_macro   0x0000000000000000       0x64 src/main.o
  .debug_macro   0x0000000000000000       0x10 src/main.o
- .debug_macro   0x0000000000000000       0xdd src/main.o
- .debug_macro   0x0000000000000000       0x22 src/main.o
- .debug_macro   0x0000000000000000      0x202 src/main.o
+ .debug_macro   0x0000000000000000      0x191 src/main.o
+ .debug_macro   0x0000000000000000       0x10 src/main.o
  .debug_macro   0x0000000000000000      0x3a8 src/main.o
- .debug_macro   0x0000000000000000      0x13c src/main.o
+ .debug_macro   0x0000000000000000      0x148 src/main.o
+ .debug_macro   0x0000000000000000       0x22 src/main.o
+ .debug_macro   0x0000000000000000      0x1c6 src/main.o
+ .group         0x0000000000000000        0xc src/mcuperipherals.o
  .group         0x0000000000000000        0xc src/mcuperipherals.o
  .group         0x0000000000000000        0xc src/mcuperipherals.o
  .group         0x0000000000000000        0xc src/mcuperipherals.o
@@ -734,7 +765,8 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x35 src/mcuperipherals.o
  .debug_macro   0x0000000000000000       0x64 src/mcuperipherals.o
  .debug_macro   0x0000000000000000       0x16 src/mcuperipherals.o
- .debug_macro   0x0000000000000000       0xe3 src/mcuperipherals.o
+ .debug_macro   0x0000000000000000      0x197 src/mcuperipherals.o
+ .group         0x0000000000000000        0xc src/ov7670.o
  .group         0x0000000000000000        0xc src/ov7670.o
  .group         0x0000000000000000        0xc src/ov7670.o
  .group         0x0000000000000000        0xc src/ov7670.o
@@ -817,11 +849,125 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x35 src/ov7670.o
  .debug_macro   0x0000000000000000       0x64 src/ov7670.o
  .debug_macro   0x0000000000000000      0x3a2 src/ov7670.o
- .debug_macro   0x0000000000000000       0xe3 src/ov7670.o
- .debug_macro   0x0000000000000000      0x13c src/ov7670.o
+ .debug_macro   0x0000000000000000       0x10 src/ov7670.o
+ .debug_macro   0x0000000000000000      0x197 src/ov7670.o
+ .debug_macro   0x0000000000000000      0x148 src/ov7670.o
  .debug_macro   0x0000000000000000       0x16 src/ov7670.o
  .debug_macro   0x0000000000000000       0x22 src/ov7670.o
  .debug_macro   0x0000000000000000       0x10 src/ov7670.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .group         0x0000000000000000        0xc src/ov7720.o
+ .text          0x0000000000000000        0x0 src/ov7720.o
+ .data          0x0000000000000000        0x0 src/ov7720.o
+ .bss           0x0000000000000000        0x0 src/ov7720.o
+ .text.ov7720_setColorSpace
+                0x0000000000000000       0x54 src/ov7720.o
+ .text.ov7720_setRes
+                0x0000000000000000       0x48 src/ov7720.o
+ .text.ov7720_init
+                0x0000000000000000       0x28 src/ov7720.o
+ .text.ov7720_colorbarpattern
+                0x0000000000000000       0x18 src/ov7720.o
+ .text.ov7720_set_clk_prescaler
+                0x0000000000000000        0x8 src/ov7720.o
+ .rodata        0x0000000000000000       0xc8 src/ov7720.o
+ .debug_info    0x0000000000000000      0x3e5 src/ov7720.o
+ .debug_abbrev  0x0000000000000000      0x154 src/ov7720.o
+ .debug_loc     0x0000000000000000      0x146 src/ov7720.o
+ .debug_aranges
+                0x0000000000000000       0x40 src/ov7720.o
+ .debug_ranges  0x0000000000000000       0x30 src/ov7720.o
+ .debug_macro   0x0000000000000000      0x1f0 src/ov7720.o
+ .debug_macro   0x0000000000000000      0xa66 src/ov7720.o
+ .debug_macro   0x0000000000000000       0x5c src/ov7720.o
+ .debug_macro   0x0000000000000000       0x22 src/ov7720.o
+ .debug_macro   0x0000000000000000       0x22 src/ov7720.o
+ .debug_macro   0x0000000000000000       0x8e src/ov7720.o
+ .debug_macro   0x0000000000000000       0x51 src/ov7720.o
+ .debug_macro   0x0000000000000000       0xef src/ov7720.o
+ .debug_macro   0x0000000000000000       0x6a src/ov7720.o
+ .debug_macro   0x0000000000000000      0x1df src/ov7720.o
+ .debug_macro   0x0000000000000000      0x69f src/ov7720.o
+ .debug_macro   0x0000000000000000     0x7dbe src/ov7720.o
+ .debug_macro   0x0000000000000000      0x2df src/ov7720.o
+ .debug_macro   0x0000000000000000      0x144 src/ov7720.o
+ .debug_macro   0x0000000000000000      0x3cf src/ov7720.o
+ .debug_macro   0x0000000000000000       0xc8 src/ov7720.o
+ .debug_macro   0x0000000000000000      0x17a src/ov7720.o
+ .debug_macro   0x0000000000000000       0xac src/ov7720.o
+ .debug_macro   0x0000000000000000      0x3ad src/ov7720.o
+ .debug_macro   0x0000000000000000       0x9a src/ov7720.o
+ .debug_macro   0x0000000000000000      0x2cf src/ov7720.o
+ .debug_macro   0x0000000000000000      0x279 src/ov7720.o
+ .debug_macro   0x0000000000000000      0x2ac src/ov7720.o
+ .debug_macro   0x0000000000000000      0x2b1 src/ov7720.o
+ .debug_macro   0x0000000000000000       0x64 src/ov7720.o
+ .debug_macro   0x0000000000000000       0x82 src/ov7720.o
+ .debug_macro   0x0000000000000000      0x3e2 src/ov7720.o
+ .debug_macro   0x0000000000000000       0x58 src/ov7720.o
+ .debug_macro   0x0000000000000000      0x341 src/ov7720.o
+ .debug_macro   0x0000000000000000      0x2c4 src/ov7720.o
+ .debug_macro   0x0000000000000000      0x711 src/ov7720.o
+ .debug_macro   0x0000000000000000      0x220 src/ov7720.o
+ .debug_macro   0x0000000000000000       0x34 src/ov7720.o
+ .debug_macro   0x0000000000000000       0x10 src/ov7720.o
+ .debug_macro   0x0000000000000000       0x35 src/ov7720.o
+ .debug_macro   0x0000000000000000       0x64 src/ov7720.o
+ .debug_macro   0x0000000000000000      0x706 src/ov7720.o
+ .debug_macro   0x0000000000000000       0x10 src/ov7720.o
+ .debug_macro   0x0000000000000000      0x3a8 src/ov7720.o
+ .debug_macro   0x0000000000000000      0x197 src/ov7720.o
+ .debug_macro   0x0000000000000000      0x148 src/ov7720.o
+ .debug_macro   0x0000000000000000       0x16 src/ov7720.o
+ .debug_macro   0x0000000000000000       0x22 src/ov7720.o
+ .debug_macro   0x0000000000000000       0x10 src/ov7720.o
+ .debug_line    0x0000000000000000      0x787 src/ov7720.o
+ .debug_str     0x0000000000000000    0x4f23f src/ov7720.o
+ .comment       0x0000000000000000       0x80 src/ov7720.o
+ .debug_frame   0x0000000000000000       0xa8 src/ov7720.o
+ .ARM.attributes
+                0x0000000000000000       0x33 src/ov7720.o
  .group         0x0000000000000000        0xc src/scheduler.o
  .group         0x0000000000000000        0xc src/scheduler.o
  .group         0x0000000000000000        0xc src/scheduler.o
@@ -940,13 +1086,15 @@ Discarded input sections
  .group         0x0000000000000000        0xc src/services.o
  .group         0x0000000000000000        0xc src/services.o
  .group         0x0000000000000000        0xc src/services.o
+ .group         0x0000000000000000        0xc src/services.o
+ .group         0x0000000000000000        0xc src/services.o
+ .group         0x0000000000000000        0xc src/services.o
+ .group         0x0000000000000000        0xc src/services.o
  .text          0x0000000000000000        0x0 src/services.o
  .data          0x0000000000000000        0x0 src/services.o
  .bss           0x0000000000000000        0x0 src/services.o
  .text.Command_service
                 0x0000000000000000       0x10 src/services.o
- .text.Heartbeat_service
-                0x0000000000000000        0x4 src/services.o
  .debug_macro   0x0000000000000000      0xa66 src/services.o
  .debug_macro   0x0000000000000000       0x5c src/services.o
  .debug_macro   0x0000000000000000       0x22 src/services.o
@@ -984,8 +1132,12 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x16 src/services.o
  .debug_macro   0x0000000000000000       0x10 src/services.o
  .debug_macro   0x0000000000000000       0x64 src/services.o
- .debug_macro   0x0000000000000000       0xdd src/services.o
+ .debug_macro   0x0000000000000000      0x191 src/services.o
+ .debug_macro   0x0000000000000000       0x10 src/services.o
+ .debug_macro   0x0000000000000000      0x3a8 src/services.o
+ .debug_macro   0x0000000000000000      0x148 src/services.o
  .debug_macro   0x0000000000000000       0x22 src/services.o
+ .debug_macro   0x0000000000000000      0x1c6 src/services.o
  .group         0x0000000000000000        0xc src/spi.o
  .group         0x0000000000000000        0xc src/spi.o
  .group         0x0000000000000000        0xc src/spi.o
@@ -1065,8 +1217,134 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x10 src/spi.o
  .debug_macro   0x0000000000000000       0x35 src/spi.o
  .debug_macro   0x0000000000000000       0x64 src/spi.o
- .debug_macro   0x0000000000000000       0xdd src/spi.o
- .debug_macro   0x0000000000000000      0x202 src/spi.o
+ .debug_macro   0x0000000000000000      0x191 src/spi.o
+ .debug_macro   0x0000000000000000      0x1c6 src/spi.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .group         0x0000000000000000        0xc src/spi_sram.o
+ .text          0x0000000000000000        0x0 src/spi_sram.o
+ .data          0x0000000000000000        0x0 src/spi_sram.o
+ .bss           0x0000000000000000        0x0 src/spi_sram.o
+ .text.spi_sram_test
+                0x0000000000000000      0x118 src/spi_sram.o
+ .text.spi_sram_init
+                0x0000000000000000       0xb8 src/spi_sram.o
+ .text.spi_sram_reset
+                0x0000000000000000       0x4c src/spi_sram.o
+ .text.spi_sram_readid
+                0x0000000000000000       0x78 src/spi_sram.o
+ .text.spi_sram_read
+                0x0000000000000000       0x4c src/spi_sram.o
+ .text.spi_sram_write
+                0x0000000000000000       0x58 src/spi_sram.o
+ .text.spi_sram_CS_low
+                0x0000000000000000        0xc src/spi_sram.o
+ .text.spi_sram_CS_high
+                0x0000000000000000        0xc src/spi_sram.o
+ .text.spi_sram_wait_if_busy
+                0x0000000000000000       0x10 src/spi_sram.o
+ .debug_info    0x0000000000000000      0xbf6 src/spi_sram.o
+ .debug_abbrev  0x0000000000000000      0x225 src/spi_sram.o
+ .debug_loc     0x0000000000000000      0x228 src/spi_sram.o
+ .debug_aranges
+                0x0000000000000000       0x60 src/spi_sram.o
+ .debug_ranges  0x0000000000000000      0x110 src/spi_sram.o
+ .debug_macro   0x0000000000000000      0x1f0 src/spi_sram.o
+ .debug_macro   0x0000000000000000      0xa66 src/spi_sram.o
+ .debug_macro   0x0000000000000000       0x5c src/spi_sram.o
+ .debug_macro   0x0000000000000000       0x22 src/spi_sram.o
+ .debug_macro   0x0000000000000000       0x22 src/spi_sram.o
+ .debug_macro   0x0000000000000000       0x8e src/spi_sram.o
+ .debug_macro   0x0000000000000000       0x51 src/spi_sram.o
+ .debug_macro   0x0000000000000000       0xef src/spi_sram.o
+ .debug_macro   0x0000000000000000       0x6a src/spi_sram.o
+ .debug_macro   0x0000000000000000      0x1df src/spi_sram.o
+ .debug_macro   0x0000000000000000      0x69f src/spi_sram.o
+ .debug_macro   0x0000000000000000     0x7dbe src/spi_sram.o
+ .debug_macro   0x0000000000000000      0x2df src/spi_sram.o
+ .debug_macro   0x0000000000000000      0x144 src/spi_sram.o
+ .debug_macro   0x0000000000000000      0x3cf src/spi_sram.o
+ .debug_macro   0x0000000000000000       0xc8 src/spi_sram.o
+ .debug_macro   0x0000000000000000      0x17a src/spi_sram.o
+ .debug_macro   0x0000000000000000       0xac src/spi_sram.o
+ .debug_macro   0x0000000000000000      0x3ad src/spi_sram.o
+ .debug_macro   0x0000000000000000       0x9a src/spi_sram.o
+ .debug_macro   0x0000000000000000      0x2cf src/spi_sram.o
+ .debug_macro   0x0000000000000000      0x279 src/spi_sram.o
+ .debug_macro   0x0000000000000000      0x2ac src/spi_sram.o
+ .debug_macro   0x0000000000000000      0x2b1 src/spi_sram.o
+ .debug_macro   0x0000000000000000       0x64 src/spi_sram.o
+ .debug_macro   0x0000000000000000       0x82 src/spi_sram.o
+ .debug_macro   0x0000000000000000      0x3e2 src/spi_sram.o
+ .debug_macro   0x0000000000000000       0x58 src/spi_sram.o
+ .debug_macro   0x0000000000000000      0x341 src/spi_sram.o
+ .debug_macro   0x0000000000000000      0x2c4 src/spi_sram.o
+ .debug_macro   0x0000000000000000      0x711 src/spi_sram.o
+ .debug_macro   0x0000000000000000      0x220 src/spi_sram.o
+ .debug_macro   0x0000000000000000       0x34 src/spi_sram.o
+ .debug_macro   0x0000000000000000       0x10 src/spi_sram.o
+ .debug_macro   0x0000000000000000       0x35 src/spi_sram.o
+ .debug_macro   0x0000000000000000       0x64 src/spi_sram.o
+ .debug_macro   0x0000000000000000      0x197 src/spi_sram.o
+ .debug_macro   0x0000000000000000       0x4c src/spi_sram.o
+ .debug_macro   0x0000000000000000       0x16 src/spi_sram.o
+ .debug_macro   0x0000000000000000       0x10 src/spi_sram.o
+ .debug_macro   0x0000000000000000      0x3a8 src/spi_sram.o
+ .debug_macro   0x0000000000000000      0x148 src/spi_sram.o
+ .debug_macro   0x0000000000000000       0x22 src/spi_sram.o
+ .debug_macro   0x0000000000000000       0x10 src/spi_sram.o
+ .debug_line    0x0000000000000000      0x8f4 src/spi_sram.o
+ .debug_str     0x0000000000000000    0x4e544 src/spi_sram.o
+ .comment       0x0000000000000000       0x80 src/spi_sram.o
+ .debug_frame   0x0000000000000000      0x108 src/spi_sram.o
+ .ARM.attributes
+                0x0000000000000000       0x33 src/spi_sram.o
+ .group         0x0000000000000000        0xc src/stm32f10x_it.o
+ .group         0x0000000000000000        0xc src/stm32f10x_it.o
+ .group         0x0000000000000000        0xc src/stm32f10x_it.o
+ .group         0x0000000000000000        0xc src/stm32f10x_it.o
+ .group         0x0000000000000000        0xc src/stm32f10x_it.o
+ .group         0x0000000000000000        0xc src/stm32f10x_it.o
  .group         0x0000000000000000        0xc src/stm32f10x_it.o
  .group         0x0000000000000000        0xc src/stm32f10x_it.o
  .group         0x0000000000000000        0xc src/stm32f10x_it.o
@@ -1140,6 +1418,12 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x10 src/stm32f10x_it.o
  .debug_macro   0x0000000000000000       0x35 src/stm32f10x_it.o
  .debug_macro   0x0000000000000000       0x16 src/stm32f10x_it.o
+ .debug_macro   0x0000000000000000       0x64 src/stm32f10x_it.o
+ .debug_macro   0x0000000000000000      0x3a2 src/stm32f10x_it.o
+ .debug_macro   0x0000000000000000      0x197 src/stm32f10x_it.o
+ .debug_macro   0x0000000000000000      0x148 src/stm32f10x_it.o
+ .debug_macro   0x0000000000000000       0x10 src/stm32f10x_it.o
+ .debug_macro   0x0000000000000000       0x22 src/stm32f10x_it.o
  .group         0x0000000000000000        0xc src/system_stm32f10x.o
  .group         0x0000000000000000        0xc src/system_stm32f10x.o
  .group         0x0000000000000000        0xc src/system_stm32f10x.o
@@ -1251,6 +1535,7 @@ Discarded input sections
  .group         0x0000000000000000        0xc src/timer.o
  .group         0x0000000000000000        0xc src/timer.o
  .group         0x0000000000000000        0xc src/timer.o
+ .group         0x0000000000000000        0xc src/timer.o
  .text          0x0000000000000000        0x0 src/timer.o
  .data          0x0000000000000000        0x0 src/timer.o
  .bss           0x0000000000000000        0x0 src/timer.o
@@ -1297,9 +1582,10 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x10 src/timer.o
  .debug_macro   0x0000000000000000       0x35 src/timer.o
  .debug_macro   0x0000000000000000       0x64 src/timer.o
- .debug_macro   0x0000000000000000       0xe3 src/timer.o
+ .debug_macro   0x0000000000000000      0x197 src/timer.o
+ .debug_macro   0x0000000000000000       0x10 src/timer.o
  .debug_macro   0x0000000000000000      0x3a8 src/timer.o
- .debug_macro   0x0000000000000000      0x13c src/timer.o
+ .debug_macro   0x0000000000000000      0x148 src/timer.o
  .text          0x0000000000000000       0x14 startup/startup_stm32.o
  .data          0x0000000000000000        0x0 startup/startup_stm32.o
  .bss           0x0000000000000000        0x0 startup/startup_stm32.o
@@ -1384,6 +1670,84 @@ Discarded input sections
  .debug_frame   0x0000000000000000       0x28 startup/sysmem.o
  .ARM.attributes
                 0x0000000000000000       0x33 startup/sysmem.o
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .text          0x0000000000000000        0x0 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .data          0x0000000000000000        0x0 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .bss           0x0000000000000000        0x0 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .text.NVIC_PriorityGroupConfig
+                0x0000000000000000       0x3c /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .text.NVIC_SetVectorTable
+                0x0000000000000000       0x44 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .text.NVIC_SystemLPConfig
+                0x0000000000000000       0x48 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .text.SysTick_CLKSourceConfig
+                0x0000000000000000       0x30 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_macro   0x0000000000000000       0x5c /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_macro   0x0000000000000000       0x22 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_macro   0x0000000000000000       0x22 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_macro   0x0000000000000000       0x8e /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_macro   0x0000000000000000       0x51 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_macro   0x0000000000000000       0xef /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_macro   0x0000000000000000       0x6a /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_macro   0x0000000000000000      0x1df /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_macro   0x0000000000000000      0x69f /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_macro   0x0000000000000000     0x7dbe /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_macro   0x0000000000000000      0x2df /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_macro   0x0000000000000000      0x144 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_macro   0x0000000000000000      0x3cf /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_macro   0x0000000000000000       0xc8 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_macro   0x0000000000000000      0x17a /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_macro   0x0000000000000000       0xac /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_macro   0x0000000000000000      0x3ad /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_macro   0x0000000000000000       0x9a /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_macro   0x0000000000000000      0x2cf /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_macro   0x0000000000000000      0x279 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_macro   0x0000000000000000      0x2ac /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_macro   0x0000000000000000      0x2b1 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_macro   0x0000000000000000       0x64 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_macro   0x0000000000000000       0x82 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_macro   0x0000000000000000      0x3e2 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_macro   0x0000000000000000       0x58 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_macro   0x0000000000000000      0x341 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_macro   0x0000000000000000      0x2c4 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_macro   0x0000000000000000      0x711 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_macro   0x0000000000000000      0x220 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_macro   0x0000000000000000       0x34 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_macro   0x0000000000000000       0x35 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
  .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
  .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
  .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
@@ -1435,6 +1799,7 @@ Discarded input sections
                 0x0000000000000000       0xc4 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
  .text.DMA_ClearITPendingBit
                 0x0000000000000000       0x3c /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
+ .debug_macro   0x0000000000000000      0xa6c /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
  .debug_macro   0x0000000000000000       0x5c /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
  .debug_macro   0x0000000000000000       0x22 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
  .debug_macro   0x0000000000000000       0x22 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
@@ -1466,7 +1831,90 @@ Discarded input sections
  .debug_macro   0x0000000000000000      0x220 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
  .debug_macro   0x0000000000000000       0x34 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
  .debug_macro   0x0000000000000000       0x8b /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
+ .debug_macro   0x0000000000000000       0x10 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
  .debug_macro   0x0000000000000000       0x35 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .text          0x0000000000000000        0x0 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .data          0x0000000000000000        0x0 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .bss           0x0000000000000000        0x0 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .text.EXTI_DeInit
+                0x0000000000000000       0x1c /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .text.EXTI_StructInit
+                0x0000000000000000        0xe /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .text.EXTI_GenerateSWInterrupt
+                0x0000000000000000       0x28 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .text.EXTI_GetFlagStatus
+                0x0000000000000000       0x88 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .text.EXTI_ClearFlag
+                0x0000000000000000       0x24 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_macro   0x0000000000000000      0xa6c /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_macro   0x0000000000000000       0x5c /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_macro   0x0000000000000000       0x22 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_macro   0x0000000000000000       0x22 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_macro   0x0000000000000000       0x8e /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_macro   0x0000000000000000       0x51 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_macro   0x0000000000000000       0xef /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_macro   0x0000000000000000       0x6a /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_macro   0x0000000000000000      0x1df /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_macro   0x0000000000000000      0x69f /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_macro   0x0000000000000000     0x7dbe /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_macro   0x0000000000000000      0x2df /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_macro   0x0000000000000000      0x144 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_macro   0x0000000000000000      0x3cf /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_macro   0x0000000000000000       0xc8 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_macro   0x0000000000000000      0x17a /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_macro   0x0000000000000000       0xac /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_macro   0x0000000000000000      0x3ad /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_macro   0x0000000000000000      0x2cf /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_macro   0x0000000000000000      0x279 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_macro   0x0000000000000000      0x2ac /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_macro   0x0000000000000000      0x2b1 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_macro   0x0000000000000000       0x64 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_macro   0x0000000000000000       0x82 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_macro   0x0000000000000000      0x3e2 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_macro   0x0000000000000000       0x58 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_macro   0x0000000000000000      0x341 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_macro   0x0000000000000000      0x2c4 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_macro   0x0000000000000000      0x711 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_macro   0x0000000000000000      0x220 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_macro   0x0000000000000000       0x34 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_macro   0x0000000000000000       0x8b /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_macro   0x0000000000000000       0x10 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_macro   0x0000000000000000       0x35 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
  .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
  .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
  .group         0x0000000000000000        0xc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
@@ -1511,8 +1959,6 @@ Discarded input sections
                 0x0000000000000000       0x16 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
  .text.GPIO_StructInit
                 0x0000000000000000       0x10 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
- .text.GPIO_ReadInputDataBit
-                0x0000000000000000       0xb4 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
  .text.GPIO_ReadInputData
                 0x0000000000000000       0x54 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
  .text.GPIO_ReadOutputDataBit
@@ -1529,8 +1975,6 @@ Discarded input sections
                 0x0000000000000000       0x20 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
  .text.GPIO_PinRemapConfig
                 0x0000000000000000      0x1a4 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
- .text.GPIO_EXTILineConfig
-                0x0000000000000000       0x50 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
  .text.GPIO_ETH_MediaInterfaceConfig
                 0x0000000000000000       0x20 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
  .debug_macro   0x0000000000000000      0xa6c /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
@@ -2185,10 +2629,6 @@ Discarded input sections
  .text          0x0000000000000000        0x0 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-strlen-stub.o)
  .data          0x0000000000000000        0x0 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-strlen-stub.o)
  .bss           0x0000000000000000        0x0 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-strlen-stub.o)
- .text.strlen   0x0000000000000000       0x5c /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-strlen-stub.o)
- .debug_frame   0x0000000000000000       0x20 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-strlen-stub.o)
- .ARM.attributes
-                0x0000000000000000       0x2d /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-strlen-stub.o)
  .text          0x0000000000000000        0x0 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-__call_atexit.o)
  .data          0x0000000000000000        0x0 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-__call_atexit.o)
  .bss           0x0000000000000000        0x0 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-__call_atexit.o)
@@ -2253,9 +2693,11 @@ LOAD src/leds.o
 LOAD src/main.o
 LOAD src/mcuperipherals.o
 LOAD src/ov7670.o
+LOAD src/ov7720.o
 LOAD src/scheduler.o
 LOAD src/services.o
 LOAD src/spi.o
+LOAD src/spi_sram.o
 LOAD src/stm32f10x_it.o
 LOAD src/system_stm32f10x.o
 LOAD src/timer.o
@@ -2280,484 +2722,556 @@ LOAD /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.e
                 0x0000000008000000                g_pfnVectors
                 0x0000000008000130                . = ALIGN (0x4)
 
-.text           0x0000000008000130     0x3724
+.text           0x0000000008000130     0x3d60
                 0x0000000008000130                . = ALIGN (0x4)
  *(.text)
  .text          0x0000000008000130       0x40 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
  *(.text*)
- .text.camera_ReadReg
-                0x0000000008000170       0x58 src/camera.o
-                0x0000000008000170                camera_ReadReg
- .text.camera_WriteReg
-                0x00000000080001c8       0x44 src/camera.o
-                0x00000000080001c8                camera_WriteReg
  .text.camera_config
-                0x000000000800020c      0x200 src/camera.o
-                0x000000000800020c                camera_config
+                0x0000000008000170      0x140 src/camera.o
+                0x0000000008000170                camera_config
+ .text.camera_show_bitdata
+                0x00000000080002b0      0x20c src/camera.o
+                0x00000000080002b0                camera_show_bitdata
+ .text.camera_store_sample
+                0x00000000080004bc       0x30 src/camera.o
+                0x00000000080004bc                camera_store_sample
+ .text.camera_get_detection_status
+                0x00000000080004ec        0xc src/camera.o
+                0x00000000080004ec                camera_get_detection_status
+ .text.camera_get_detected_status
+                0x00000000080004f8        0xc src/camera.o
+                0x00000000080004f8                camera_get_detected_status
+ .text.camera_set_detected_status
+                0x0000000008000504        0xc src/camera.o
+                0x0000000008000504                camera_set_detected_status
+ .text.camera_set_detection_status
+                0x0000000008000510       0x40 src/camera.o
+                0x0000000008000510                camera_set_detection_status
+ .text.camera_detection
+                0x0000000008000550      0x198 src/camera.o
+                0x0000000008000550                camera_detection
+ .text.camera_get_threshold
+                0x00000000080006e8       0xbc src/camera.o
+                0x00000000080006e8                camera_get_threshold
+ .text.camera_service_handler
+                0x00000000080007a4       0x10 src/camera.o
+                0x00000000080007a4                camera_service_handler
+ .text.camera_ReadReg
+                0x00000000080007b4       0x58 src/camera.o
+                0x00000000080007b4                camera_ReadReg
+ .text.camera_WriteReg
+                0x000000000800080c       0x44 src/camera.o
+                0x000000000800080c                camera_WriteReg
+ .text.wrSensorRegs8_8
+                0x0000000008000850       0x94 src/camera.o
+                0x0000000008000850                wrSensorRegs8_8
  .text.delay_ms
-                0x000000000800040c       0x2c src/delay.o
-                0x000000000800040c                delay_ms
+                0x00000000080008e4       0x2c src/delay.o
+                0x00000000080008e4                delay_ms
  .text.Set_Delay_finished
-                0x0000000008000438        0xc src/delay.o
-                0x0000000008000438                Set_Delay_finished
+                0x0000000008000910        0xc src/delay.o
+                0x0000000008000910                Set_Delay_finished
  .text.gpio_init
-                0x0000000008000444       0x58 src/gpio.o
-                0x0000000008000444                gpio_init
+                0x000000000800091c       0x98 src/gpio.o
+                0x000000000800091c                gpio_init
  .text.i2c_init
-                0x000000000800049c       0x94 src/i2c.o
-                0x000000000800049c                i2c_init
+                0x00000000080009b4       0x94 src/i2c.o
+                0x00000000080009b4                i2c_init
  .text.I2C_start
-                0x0000000008000530       0x68 src/i2c.o
-                0x0000000008000530                I2C_start
+                0x0000000008000a48       0x68 src/i2c.o
+                0x0000000008000a48                I2C_start
  .text.I2C_write
-                0x0000000008000598       0x1c src/i2c.o
-                0x0000000008000598                I2C_write
+                0x0000000008000ab0       0x1c src/i2c.o
+                0x0000000008000ab0                I2C_write
  .text.I2C_read_nack
-                0x00000000080005b4       0x30 src/i2c.o
-                0x00000000080005b4                I2C_read_nack
+                0x0000000008000acc       0x30 src/i2c.o
+                0x0000000008000acc                I2C_read_nack
  .text.I2C_stop
-                0x00000000080005e4        0x8 src/i2c.o
-                0x00000000080005e4                I2C_stop
+                0x0000000008000afc        0x8 src/i2c.o
+                0x0000000008000afc                I2C_stop
  .text.ili_display_clear
-                0x00000000080005ec      0x180 src/ili9341.o
-                0x00000000080005ec                ili_display_clear
- .text.ili_draw_line
-                0x000000000800076c      0x3b8 src/ili9341.o
-                0x000000000800076c                ili_draw_line
+                0x0000000008000b04      0x184 src/ili9341.o
+                0x0000000008000b04                ili_display_clear
  .text.lcd_config
-                0x0000000008000b24     0x108c src/ili9341.o
-                0x0000000008000b24                lcd_config
- .text.CS_low   0x0000000008001bb0       0x10 src/ili9341.o
-                0x0000000008001bb0                CS_low
- .text.DC_data  0x0000000008001bc0       0x10 src/ili9341.o
-                0x0000000008001bc0                DC_data
+                0x0000000008000c88     0x1060 src/ili9341.o
+                0x0000000008000c88                lcd_config
+ .text.ili_print_char
+                0x0000000008001ce8      0x24c src/ili9341.o
+                0x0000000008001ce8                ili_print_char
+ .text.ili_text_print
+                0x0000000008001f34       0xa8 src/ili9341.o
+                0x0000000008001f34                ili_text_print
+ .text.CS_low   0x0000000008001fdc       0x10 src/ili9341.o
+                0x0000000008001fdc                CS_low
+ .text.CS_high  0x0000000008001fec       0x1c src/ili9341.o
+                0x0000000008001fec                CS_high
+ .text.DC_data  0x0000000008002008       0x10 src/ili9341.o
+                0x0000000008002008                DC_data
  .text.send_instruction
-                0x0000000008001bd0       0x3c src/ili9341.o
-                0x0000000008001bd0                send_instruction
+                0x0000000008002018       0x40 src/ili9341.o
+                0x0000000008002018                send_instruction
  .text.send_data16
-                0x0000000008001c0c       0x3c src/ili9341.o
-                0x0000000008001c0c                send_data16
+                0x0000000008002058       0x40 src/ili9341.o
+                0x0000000008002058                send_data16
  .text.leds_config
-                0x0000000008001c48       0x10 src/leds.o
-                0x0000000008001c48                leds_config
+                0x0000000008002098       0x10 src/leds.o
+                0x0000000008002098                leds_config
  .text.startup.main
-                0x0000000008001c58       0x20 src/main.o
-                0x0000000008001c58                main
+                0x00000000080020a8       0x20 src/main.o
+                0x00000000080020a8                main
  .text.assert_failed
-                0x0000000008001c78        0x4 src/main.o
-                0x0000000008001c78                assert_failed
+                0x00000000080020c8        0x4 src/main.o
+                0x00000000080020c8                assert_failed
  .text.mcuperipherals_init
-                0x0000000008001c7c       0x18 src/mcuperipherals.o
-                0x0000000008001c7c                mcuperipherals_init
+                0x00000000080020cc       0x18 src/mcuperipherals.o
+                0x00000000080020cc                mcuperipherals_init
  .text.ov7670_setColorSpace
-                0x0000000008001c94      0x114 src/ov7670.o
-                0x0000000008001c94                ov7670_setColorSpace
+                0x00000000080020e4       0x40 src/ov7670.o
+                0x00000000080020e4                ov7670_setColorSpace
  .text.ov7670_setRes
-                0x0000000008001da8      0x11c src/ov7670.o
-                0x0000000008001da8                ov7670_setRes
+                0x0000000008002124       0x68 src/ov7670.o
+                0x0000000008002124                ov7670_setRes
  .text.ov7670_init
-                0x0000000008001ec4       0x70 src/ov7670.o
-                0x0000000008001ec4                ov7670_init
+                0x000000000800218c       0x28 src/ov7670.o
+                0x000000000800218c                ov7670_init
  .text.Scheduler_init
-                0x0000000008001f34       0x50 src/scheduler.o
-                0x0000000008001f34                Scheduler_init
+                0x00000000080021b4       0x50 src/scheduler.o
+                0x00000000080021b4                Scheduler_init
  .text.Scheduler_start
-                0x0000000008001f84        0x4 src/scheduler.o
-                0x0000000008001f84                Scheduler_start
+                0x0000000008002204        0x4 src/scheduler.o
+                0x0000000008002204                Scheduler_start
  .text.Scheduler_Dispatch_Tasks
-                0x0000000008001f88       0x30 src/scheduler.o
-                0x0000000008001f88                Scheduler_Dispatch_Tasks
+                0x0000000008002208       0x30 src/scheduler.o
+                0x0000000008002208                Scheduler_Dispatch_Tasks
  .text.Scheduler_Add_Task
-                0x0000000008001fb8       0x3c src/scheduler.o
-                0x0000000008001fb8                Scheduler_Add_Task
+                0x0000000008002238       0x3c src/scheduler.o
+                0x0000000008002238                Scheduler_Add_Task
  .text.Run_scheduler
-                0x0000000008001ff4       0x38 src/scheduler.o
-                0x0000000008001ff4                Run_scheduler
+                0x0000000008002274       0x38 src/scheduler.o
+                0x0000000008002274                Run_scheduler
  .text.LED_service
-                0x000000000800202c       0x28 src/services.o
-                0x000000000800202c                LED_service
+                0x00000000080022ac       0x28 src/services.o
+                0x00000000080022ac                LED_service
  .text.Delay_service
-                0x0000000008002054        0x8 src/services.o
-                0x0000000008002054                Delay_service
+                0x00000000080022d4        0x8 src/services.o
+                0x00000000080022d4                Delay_service
+ .text.camera_service
+                0x00000000080022dc        0x4 src/services.o
+                0x00000000080022dc                camera_service
+ .text.button_service
+                0x00000000080022e0       0x44 src/services.o
+                0x00000000080022e0                button_service
  .text.spi_init
-                0x000000000800205c       0x80 src/spi.o
-                0x000000000800205c                spi_init
+                0x0000000008002324       0x80 src/spi.o
+                0x0000000008002324                spi_init
  .text.SPI_Write8
-                0x00000000080020dc       0x18 src/spi.o
-                0x00000000080020dc                SPI_Write8
+                0x00000000080023a4       0x18 src/spi.o
+                0x00000000080023a4                SPI_Write8
  .text.SPI_Write16
-                0x00000000080020f4       0x28 src/spi.o
-                0x00000000080020f4                SPI_Write16
+                0x00000000080023bc       0x28 src/spi.o
+                0x00000000080023bc                SPI_Write16
  .text.NMI_Handler
-                0x000000000800211c        0x4 src/stm32f10x_it.o
-                0x000000000800211c                NMI_Handler
+                0x00000000080023e4        0x4 src/stm32f10x_it.o
+                0x00000000080023e4                NMI_Handler
  .text.HardFault_Handler
-                0x0000000008002120        0x4 src/stm32f10x_it.o
-                0x0000000008002120                HardFault_Handler
+                0x00000000080023e8        0x4 src/stm32f10x_it.o
+                0x00000000080023e8                HardFault_Handler
  .text.MemManage_Handler
-                0x0000000008002124        0x4 src/stm32f10x_it.o
-                0x0000000008002124                MemManage_Handler
+                0x00000000080023ec        0x4 src/stm32f10x_it.o
+                0x00000000080023ec                MemManage_Handler
  .text.BusFault_Handler
-                0x0000000008002128        0x4 src/stm32f10x_it.o
-                0x0000000008002128                BusFault_Handler
+                0x00000000080023f0        0x4 src/stm32f10x_it.o
+                0x00000000080023f0                BusFault_Handler
  .text.UsageFault_Handler
-                0x000000000800212c        0x4 src/stm32f10x_it.o
-                0x000000000800212c                UsageFault_Handler
+                0x00000000080023f4        0x4 src/stm32f10x_it.o
+                0x00000000080023f4                UsageFault_Handler
  .text.SVC_Handler
-                0x0000000008002130        0x4 src/stm32f10x_it.o
-                0x0000000008002130                SVC_Handler
+                0x00000000080023f8        0x4 src/stm32f10x_it.o
+                0x00000000080023f8                SVC_Handler
  .text.DebugMon_Handler
-                0x0000000008002134        0x4 src/stm32f10x_it.o
-                0x0000000008002134                DebugMon_Handler
+                0x00000000080023fc        0x4 src/stm32f10x_it.o
+                0x00000000080023fc                DebugMon_Handler
  .text.PendSV_Handler
-                0x0000000008002138        0x4 src/stm32f10x_it.o
-                0x0000000008002138                PendSV_Handler
+                0x0000000008002400        0x4 src/stm32f10x_it.o
+                0x0000000008002400                PendSV_Handler
  .text.SysTick_Handler
-                0x000000000800213c        0x4 src/stm32f10x_it.o
-                0x000000000800213c                SysTick_Handler
+                0x0000000008002404        0x4 src/stm32f10x_it.o
+                0x0000000008002404                SysTick_Handler
+ .text.EXTI9_5_IRQHandler
+                0x0000000008002408       0x28 src/stm32f10x_it.o
+                0x0000000008002408                EXTI9_5_IRQHandler
  .text.SystemInit
-                0x0000000008002140      0x104 src/system_stm32f10x.o
-                0x0000000008002140                SystemInit
+                0x0000000008002430      0x104 src/system_stm32f10x.o
+                0x0000000008002430                SystemInit
  .text.timer_timebase_init
-                0x0000000008002244       0x98 src/timer.o
-                0x0000000008002244                timer_timebase_init
+                0x0000000008002534       0x98 src/timer.o
+                0x0000000008002534                timer_timebase_init
  .text.Reset_Handler
-                0x00000000080022dc       0x50 startup/startup_stm32.o
-                0x00000000080022dc                Reset_Handler
+                0x00000000080025cc       0x50 startup/startup_stm32.o
+                0x00000000080025cc                Reset_Handler
  .text.Default_Handler
-                0x000000000800232c        0x2 startup/startup_stm32.o
-                0x000000000800232c                DMA2_Channel3_IRQHandler
-                0x000000000800232c                TIM8_TRG_COM_IRQHandler
-                0x000000000800232c                TIM8_CC_IRQHandler
-                0x000000000800232c                TIM1_CC_IRQHandler
-                0x000000000800232c                TIM6_IRQHandler
-                0x000000000800232c                PVD_IRQHandler
-                0x000000000800232c                SDIO_IRQHandler
-                0x000000000800232c                EXTI3_IRQHandler
-                0x000000000800232c                USB_HP_CAN_TX_IRQHandler
-                0x000000000800232c                EXTI0_IRQHandler
-                0x000000000800232c                I2C2_EV_IRQHandler
-                0x000000000800232c                ADC1_2_IRQHandler
-                0x000000000800232c                SPI1_IRQHandler
-                0x000000000800232c                CAN_SCE_IRQHandler
-                0x000000000800232c                TAMPER_IRQHandler
-                0x000000000800232c                TIM8_UP_IRQHandler
-                0x000000000800232c                DMA2_Channel2_IRQHandler
-                0x000000000800232c                DMA1_Channel4_IRQHandler
-                0x000000000800232c                USART3_IRQHandler
-                0x000000000800232c                RTC_IRQHandler
-                0x000000000800232c                DMA1_Channel7_IRQHandler
-                0x000000000800232c                UART5_IRQHandler
-                0x000000000800232c                ADC3_IRQHandler
-                0x000000000800232c                TIM4_IRQHandler
-                0x000000000800232c                CAN_RX1_IRQHandler
-                0x000000000800232c                DMA2_Channel1_IRQHandler
-                0x000000000800232c                I2C1_EV_IRQHandler
-                0x000000000800232c                DMA1_Channel6_IRQHandler
-                0x000000000800232c                UART4_IRQHandler
-                0x000000000800232c                TIM3_IRQHandler
-                0x000000000800232c                RCC_IRQHandler
-                0x000000000800232c                TIM1_TRG_COM_IRQHandler
-                0x000000000800232c                DMA1_Channel1_IRQHandler
-                0x000000000800232c                Default_Handler
-                0x000000000800232c                EXTI15_10_IRQHandler
-                0x000000000800232c                TIM7_IRQHandler
-                0x000000000800232c                TIM5_IRQHandler
-                0x000000000800232c                EXTI9_5_IRQHandler
-                0x000000000800232c                SPI2_IRQHandler
-                0x000000000800232c                USB_LP_CAN_RX0_IRQHandler
-                0x000000000800232c                DMA1_Channel5_IRQHandler
-                0x000000000800232c                EXTI4_IRQHandler
-                0x000000000800232c                DMA1_Channel3_IRQHandler
-                0x000000000800232c                FSMC_IRQHandler
-                0x000000000800232c                TIM1_UP_IRQHandler
-                0x000000000800232c                WWDG_IRQHandler
-                0x000000000800232c                TIM2_IRQHandler
-                0x000000000800232c                TIM1_BRK_IRQHandler
-                0x000000000800232c                EXTI1_IRQHandler
-                0x000000000800232c                RTCAlarm_IRQHandler
-                0x000000000800232c                DMA2_Channel4_5_IRQHandler
-                0x000000000800232c                USART2_IRQHandler
-                0x000000000800232c                I2C2_ER_IRQHandler
-                0x000000000800232c                DMA1_Channel2_IRQHandler
-                0x000000000800232c                TIM8_BRK_IRQHandler
-                0x000000000800232c                FLASH_IRQHandler
-                0x000000000800232c                USART1_IRQHandler
-                0x000000000800232c                SPI3_IRQHandler
-                0x000000000800232c                I2C1_ER_IRQHandler
-                0x000000000800232c                EXTI2_IRQHandler
- *fill*         0x000000000800232e        0x2 
+                0x000000000800261c        0x2 startup/startup_stm32.o
+                0x000000000800261c                DMA2_Channel3_IRQHandler
+                0x000000000800261c                TIM8_TRG_COM_IRQHandler
+                0x000000000800261c                TIM8_CC_IRQHandler
+                0x000000000800261c                TIM1_CC_IRQHandler
+                0x000000000800261c                TIM6_IRQHandler
+                0x000000000800261c                PVD_IRQHandler
+                0x000000000800261c                SDIO_IRQHandler
+                0x000000000800261c                EXTI3_IRQHandler
+                0x000000000800261c                USB_HP_CAN_TX_IRQHandler
+                0x000000000800261c                EXTI0_IRQHandler
+                0x000000000800261c                I2C2_EV_IRQHandler
+                0x000000000800261c                ADC1_2_IRQHandler
+                0x000000000800261c                SPI1_IRQHandler
+                0x000000000800261c                CAN_SCE_IRQHandler
+                0x000000000800261c                TAMPER_IRQHandler
+                0x000000000800261c                TIM8_UP_IRQHandler
+                0x000000000800261c                DMA2_Channel2_IRQHandler
+                0x000000000800261c                DMA1_Channel4_IRQHandler
+                0x000000000800261c                USART3_IRQHandler
+                0x000000000800261c                RTC_IRQHandler
+                0x000000000800261c                DMA1_Channel7_IRQHandler
+                0x000000000800261c                UART5_IRQHandler
+                0x000000000800261c                ADC3_IRQHandler
+                0x000000000800261c                TIM4_IRQHandler
+                0x000000000800261c                CAN_RX1_IRQHandler
+                0x000000000800261c                DMA2_Channel1_IRQHandler
+                0x000000000800261c                I2C1_EV_IRQHandler
+                0x000000000800261c                DMA1_Channel6_IRQHandler
+                0x000000000800261c                UART4_IRQHandler
+                0x000000000800261c                TIM3_IRQHandler
+                0x000000000800261c                RCC_IRQHandler
+                0x000000000800261c                TIM1_TRG_COM_IRQHandler
+                0x000000000800261c                DMA1_Channel1_IRQHandler
+                0x000000000800261c                Default_Handler
+                0x000000000800261c                EXTI15_10_IRQHandler
+                0x000000000800261c                TIM7_IRQHandler
+                0x000000000800261c                TIM5_IRQHandler
+                0x000000000800261c                SPI2_IRQHandler
+                0x000000000800261c                USB_LP_CAN_RX0_IRQHandler
+                0x000000000800261c                DMA1_Channel5_IRQHandler
+                0x000000000800261c                EXTI4_IRQHandler
+                0x000000000800261c                DMA1_Channel3_IRQHandler
+                0x000000000800261c                FSMC_IRQHandler
+                0x000000000800261c                TIM1_UP_IRQHandler
+                0x000000000800261c                WWDG_IRQHandler
+                0x000000000800261c                TIM2_IRQHandler
+                0x000000000800261c                TIM1_BRK_IRQHandler
+                0x000000000800261c                EXTI1_IRQHandler
+                0x000000000800261c                RTCAlarm_IRQHandler
+                0x000000000800261c                DMA2_Channel4_5_IRQHandler
+                0x000000000800261c                USART2_IRQHandler
+                0x000000000800261c                I2C2_ER_IRQHandler
+                0x000000000800261c                DMA1_Channel2_IRQHandler
+                0x000000000800261c                TIM8_BRK_IRQHandler
+                0x000000000800261c                FLASH_IRQHandler
+                0x000000000800261c                USART1_IRQHandler
+                0x000000000800261c                SPI3_IRQHandler
+                0x000000000800261c                I2C1_ER_IRQHandler
+                0x000000000800261c                EXTI2_IRQHandler
+ *fill*         0x000000000800261e        0x2 
+ .text.NVIC_Init
+                0x0000000008002620       0x88 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+                0x0000000008002620                NVIC_Init
  .text.DMA_DeInit
-                0x0000000008002330      0x150 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
-                0x0000000008002330                DMA_DeInit
+                0x00000000080026a8      0x150 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
+                0x00000000080026a8                DMA_DeInit
  .text.DMA_Init
-                0x0000000008002480      0x13c /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
-                0x0000000008002480                DMA_Init
+                0x00000000080027f8      0x13c /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
+                0x00000000080027f8                DMA_Init
  .text.DMA_GetFlagStatus
-                0x00000000080025bc       0xc4 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
-                0x00000000080025bc                DMA_GetFlagStatus
+                0x0000000008002934       0xc4 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
+                0x0000000008002934                DMA_GetFlagStatus
  .text.DMA_ClearFlag
-                0x0000000008002680       0x3c /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
-                0x0000000008002680                DMA_ClearFlag
+                0x00000000080029f8       0x3c /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
+                0x00000000080029f8                DMA_ClearFlag
+ .text.EXTI_Init
+                0x0000000008002a34       0xb4 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+                0x0000000008002a34                EXTI_Init
+ .text.EXTI_GetITStatus
+                0x0000000008002ae8       0x8c /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+                0x0000000008002ae8                EXTI_GetITStatus
+ .text.EXTI_ClearITPendingBit
+                0x0000000008002b74       0x24 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+                0x0000000008002b74                EXTI_ClearITPendingBit
  .text.GPIO_Init
-                0x00000000080026bc      0x134 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
-                0x00000000080026bc                GPIO_Init
+                0x0000000008002b98      0x134 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
+                0x0000000008002b98                GPIO_Init
+ .text.GPIO_ReadInputDataBit
+                0x0000000008002ccc       0xb4 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
+                0x0000000008002ccc                GPIO_ReadInputDataBit
  .text.GPIO_ReadOutputData
-                0x00000000080027f0       0x54 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
-                0x00000000080027f0                GPIO_ReadOutputData
+                0x0000000008002d80       0x54 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
+                0x0000000008002d80                GPIO_ReadOutputData
  .text.GPIO_SetBits
-                0x0000000008002844       0x60 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
-                0x0000000008002844                GPIO_SetBits
+                0x0000000008002dd4       0x60 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
+                0x0000000008002dd4                GPIO_SetBits
  .text.GPIO_ResetBits
-                0x00000000080028a4       0x60 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
-                0x00000000080028a4                GPIO_ResetBits
+                0x0000000008002e34       0x60 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
+                0x0000000008002e34                GPIO_ResetBits
+ .text.GPIO_EXTILineConfig
+                0x0000000008002e94       0x50 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
+                0x0000000008002e94                GPIO_EXTILineConfig
  .text.I2C_Init
-                0x0000000008002904      0x15c /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
-                0x0000000008002904                I2C_Init
- .text.I2C_Cmd  0x0000000008002a60       0x50 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
-                0x0000000008002a60                I2C_Cmd
+                0x0000000008002ee4      0x15c /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
+                0x0000000008002ee4                I2C_Init
+ .text.I2C_Cmd  0x0000000008003040       0x50 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
+                0x0000000008003040                I2C_Cmd
  .text.I2C_GenerateSTART
-                0x0000000008002ab0       0x50 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
-                0x0000000008002ab0                I2C_GenerateSTART
+                0x0000000008003090       0x50 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
+                0x0000000008003090                I2C_GenerateSTART
  .text.I2C_GenerateSTOP
-                0x0000000008002b00       0x50 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
-                0x0000000008002b00                I2C_GenerateSTOP
+                0x00000000080030e0       0x50 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
+                0x00000000080030e0                I2C_GenerateSTOP
  .text.I2C_AcknowledgeConfig
-                0x0000000008002b50       0x50 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
-                0x0000000008002b50                I2C_AcknowledgeConfig
+                0x0000000008003130       0x50 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
+                0x0000000008003130                I2C_AcknowledgeConfig
  .text.I2C_SendData
-                0x0000000008002ba0       0x2c /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
-                0x0000000008002ba0                I2C_SendData
+                0x0000000008003180       0x2c /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
+                0x0000000008003180                I2C_SendData
  .text.I2C_ReceiveData
-                0x0000000008002bcc       0x2c /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
-                0x0000000008002bcc                I2C_ReceiveData
+                0x00000000080031ac       0x2c /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
+                0x00000000080031ac                I2C_ReceiveData
  .text.I2C_Send7bitAddress
-                0x0000000008002bf8       0x4c /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
-                0x0000000008002bf8                I2C_Send7bitAddress
+                0x00000000080031d8       0x4c /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
+                0x00000000080031d8                I2C_Send7bitAddress
  .text.I2C_CheckEvent
-                0x0000000008002c44       0xc0 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
-                0x0000000008002c44                I2C_CheckEvent
+                0x0000000008003224       0xc0 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
+                0x0000000008003224                I2C_CheckEvent
  .text.I2C_GetFlagStatus
-                0x0000000008002d04       0xe8 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
-                0x0000000008002d04                I2C_GetFlagStatus
+                0x00000000080032e4       0xe8 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
+                0x00000000080032e4                I2C_GetFlagStatus
  .text.RCC_GetClocksFreq
-                0x0000000008002dec       0x80 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_rcc.o)
-                0x0000000008002dec                RCC_GetClocksFreq
+                0x00000000080033cc       0x80 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_rcc.o)
+                0x00000000080033cc                RCC_GetClocksFreq
  .text.RCC_AHBPeriphClockCmd
-                0x0000000008002e6c       0x48 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_rcc.o)
-                0x0000000008002e6c                RCC_AHBPeriphClockCmd
+                0x000000000800344c       0x48 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_rcc.o)
+                0x000000000800344c                RCC_AHBPeriphClockCmd
  .text.RCC_APB2PeriphClockCmd
-                0x0000000008002eb4       0x48 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_rcc.o)
-                0x0000000008002eb4                RCC_APB2PeriphClockCmd
+                0x0000000008003494       0x48 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_rcc.o)
+                0x0000000008003494                RCC_APB2PeriphClockCmd
  .text.RCC_APB1PeriphClockCmd
-                0x0000000008002efc       0x48 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_rcc.o)
-                0x0000000008002efc                RCC_APB1PeriphClockCmd
+                0x00000000080034dc       0x48 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_rcc.o)
+                0x00000000080034dc                RCC_APB1PeriphClockCmd
  .text.RCC_APB2PeriphResetCmd
-                0x0000000008002f44       0x48 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_rcc.o)
-                0x0000000008002f44                RCC_APB2PeriphResetCmd
+                0x0000000008003524       0x48 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_rcc.o)
+                0x0000000008003524                RCC_APB2PeriphResetCmd
  .text.RCC_APB1PeriphResetCmd
-                0x0000000008002f8c       0x48 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_rcc.o)
-                0x0000000008002f8c                RCC_APB1PeriphResetCmd
+                0x000000000800356c       0x48 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_rcc.o)
+                0x000000000800356c                RCC_APB1PeriphResetCmd
  .text.SPI_I2S_DeInit
-                0x0000000008002fd4       0x70 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_spi.o)
-                0x0000000008002fd4                SPI_I2S_DeInit
+                0x00000000080035b4       0x70 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_spi.o)
+                0x00000000080035b4                SPI_I2S_DeInit
  .text.SPI_Init
-                0x0000000008003044      0x104 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_spi.o)
-                0x0000000008003044                SPI_Init
- .text.SPI_Cmd  0x0000000008003148       0x58 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_spi.o)
-                0x0000000008003148                SPI_Cmd
+                0x0000000008003624      0x104 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_spi.o)
+                0x0000000008003624                SPI_Init
+ .text.SPI_Cmd  0x0000000008003728       0x58 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_spi.o)
+                0x0000000008003728                SPI_Cmd
  .text.SPI_I2S_ReceiveData
-                0x00000000080031a0       0x30 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_spi.o)
-                0x00000000080031a0                SPI_I2S_ReceiveData
+                0x0000000008003780       0x30 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_spi.o)
+                0x0000000008003780                SPI_I2S_ReceiveData
  .text.SPI_I2S_GetFlagStatus
-                0x00000000080031d0       0x64 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_spi.o)
-                0x00000000080031d0                SPI_I2S_GetFlagStatus
+                0x00000000080037b0       0x64 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_spi.o)
+                0x00000000080037b0                SPI_I2S_GetFlagStatus
  .text.TIM_TimeBaseInit
-                0x0000000008003234      0x15c /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_tim.o)
-                0x0000000008003234                TIM_TimeBaseInit
+                0x0000000008003814      0x15c /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_tim.o)
+                0x0000000008003814                TIM_TimeBaseInit
  .text.TIM_OC4Init
-                0x0000000008003390      0x100 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_tim.o)
-                0x0000000008003390                TIM_OC4Init
- .text.TIM_Cmd  0x0000000008003490       0xc4 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_tim.o)
-                0x0000000008003490                TIM_Cmd
+                0x0000000008003970      0x100 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_tim.o)
+                0x0000000008003970                TIM_OC4Init
+ .text.TIM_Cmd  0x0000000008003a70       0xc4 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_tim.o)
+                0x0000000008003a70                TIM_Cmd
  .text.TIM_CtrlPWMOutputs
-                0x0000000008003554       0x68 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_tim.o)
-                0x0000000008003554                TIM_CtrlPWMOutputs
+                0x0000000008003b34       0x68 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_tim.o)
+                0x0000000008003b34                TIM_CtrlPWMOutputs
  .text.TIM_PrescalerConfig
-                0x00000000080035bc       0xb4 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_tim.o)
-                0x00000000080035bc                TIM_PrescalerConfig
+                0x0000000008003b9c       0xb4 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_tim.o)
+                0x0000000008003b9c                TIM_PrescalerConfig
  .text.TIM_OC4PreloadConfig
-                0x0000000008003670       0x68 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_tim.o)
-                0x0000000008003670                TIM_OC4PreloadConfig
+                0x0000000008003c50       0x68 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_tim.o)
+                0x0000000008003c50                TIM_OC4PreloadConfig
  .text.__libc_init_array
-                0x00000000080036d8       0x48 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-init.o)
-                0x00000000080036d8                __libc_init_array
+                0x0000000008003cb8       0x48 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-init.o)
+                0x0000000008003cb8                __libc_init_array
+ .text.strlen   0x0000000008003d00       0x5c /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-strlen-stub.o)
+                0x0000000008003d00                strlen
  .text.startup.register_fini
-                0x0000000008003720       0x14 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-__call_atexit.o)
- .text.atexit   0x0000000008003734        0xc /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-atexit.o)
-                0x0000000008003734                atexit
+                0x0000000008003d5c       0x14 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-__call_atexit.o)
+ .text.atexit   0x0000000008003d70        0xc /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-atexit.o)
+                0x0000000008003d70                atexit
  .text.__libc_fini_array
-                0x0000000008003740       0x34 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-fini.o)
-                0x0000000008003740                __libc_fini_array
+                0x0000000008003d7c       0x34 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-fini.o)
+                0x0000000008003d7c                __libc_fini_array
  .text.__retarget_lock_acquire_recursive
-                0x0000000008003774        0x4 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-lock.o)
-                0x0000000008003774                __retarget_lock_acquire_recursive
+                0x0000000008003db0        0x4 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-lock.o)
+                0x0000000008003db0                __retarget_lock_acquire_recursive
  .text.__retarget_lock_release_recursive
-                0x0000000008003778        0x4 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-lock.o)
-                0x0000000008003778                __retarget_lock_release_recursive
+                0x0000000008003db4        0x4 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-lock.o)
+                0x0000000008003db4                __retarget_lock_release_recursive
  .text.__register_exitproc
-                0x000000000800377c       0xc0 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-__atexit.o)
-                0x000000000800377c                __register_exitproc
+                0x0000000008003db8       0xc0 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-__atexit.o)
+                0x0000000008003db8                __register_exitproc
  *(.glue_7)
- .glue_7        0x000000000800383c        0x0 linker stubs
+ .glue_7        0x0000000008003e78        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x000000000800383c        0x0 linker stubs
+ .glue_7t       0x0000000008003e78        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x000000000800383c        0x0 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+ .eh_frame      0x0000000008003e78        0x0 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
  *(.init)
- .init          0x000000000800383c        0x4 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crti.o
-                0x000000000800383c                _init
- .init          0x0000000008003840        0x8 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
+ .init          0x0000000008003e78        0x4 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crti.o
+                0x0000000008003e78                _init
+ .init          0x0000000008003e7c        0x8 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
  *(.fini)
- .fini          0x0000000008003848        0x4 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crti.o
-                0x0000000008003848                _fini
- .fini          0x000000000800384c        0x8 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
-                0x0000000008003854                . = ALIGN (0x4)
-                0x0000000008003854                _etext = .
+ .fini          0x0000000008003e84        0x4 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crti.o
+                0x0000000008003e84                _fini
+ .fini          0x0000000008003e88        0x8 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
+                0x0000000008003e90                . = ALIGN (0x4)
+                0x0000000008003e90                _etext = .
 
-.vfp11_veneer   0x0000000008003854        0x0
- .vfp11_veneer  0x0000000008003854        0x0 linker stubs
+.vfp11_veneer   0x0000000008003e90        0x0
+ .vfp11_veneer  0x0000000008003e90        0x0 linker stubs
 
-.v4_bx          0x0000000008003854        0x0
- .v4_bx         0x0000000008003854        0x0 linker stubs
+.v4_bx          0x0000000008003e90        0x0
+ .v4_bx         0x0000000008003e90        0x0 linker stubs
 
-.iplt           0x0000000008003854        0x0
- .iplt          0x0000000008003854        0x0 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+.iplt           0x0000000008003e90        0x0
+ .iplt          0x0000000008003e90        0x0 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
 
-.rodata         0x0000000008003854      0x324
-                0x0000000008003854                . = ALIGN (0x4)
+.rodata         0x0000000008003e90      0xca8
+                0x0000000008003e90                . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x0000000008003854      0x1b6 src/ov7670.o
+ .rodata        0x0000000008003e90      0x900 src/ili9341.o
+                0x0000000008003e90                ASCII12x12_Table
+ .rodata        0x0000000008004790      0x1ca src/ov7670.o
  *(.rodata*)
  .rodata.str1.1
-                0x0000000008003a0a       0x3c /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
+                0x000000000800495a       0x33 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
  .rodata.str1.1
-                0x0000000008003a46       0x3d /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
+                0x000000000800498d       0x3c /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
  .rodata.str1.1
-                0x0000000008003a83       0x3c /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
+                0x00000000080049c9       0x3d /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
  .rodata.str1.1
-                0x0000000008003abf       0x3c /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_rcc.o)
+                0x0000000008004a06       0x3d /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
  .rodata.str1.1
-                0x0000000008003afb       0x3c /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_spi.o)
+                0x0000000008004a43       0x3c /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
  .rodata.str1.1
-                0x0000000008003b37       0x3c /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_tim.o)
- *fill*         0x0000000008003b73        0x1 
+                0x0000000008004a7f       0x3c /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_rcc.o)
+ .rodata.str1.1
+                0x0000000008004abb       0x3c /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_spi.o)
+ .rodata.str1.1
+                0x0000000008004af7       0x3c /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_tim.o)
+ *fill*         0x0000000008004b33        0x1 
  .rodata._global_impure_ptr
-                0x0000000008003b74        0x4 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-impure.o)
-                0x0000000008003b74                _global_impure_ptr
-                0x0000000008003b78                . = ALIGN (0x4)
+                0x0000000008004b34        0x4 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-impure.o)
+                0x0000000008004b34                _global_impure_ptr
+                0x0000000008004b38                . = ALIGN (0x4)
 
-.rel.dyn        0x0000000008003b78        0x0
- .rel.iplt      0x0000000008003b78        0x0 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+.rel.dyn        0x0000000008004b38        0x0
+ .rel.iplt      0x0000000008004b38        0x0 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
 
-.ARM.extab      0x0000000008003b78        0x0
-                0x0000000008003b78                . = ALIGN (0x4)
+.ARM.extab      0x0000000008004b38        0x0
+                0x0000000008004b38                . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x0000000008003b78                . = ALIGN (0x4)
+                0x0000000008004b38                . = ALIGN (0x4)
 
-.ARM            0x0000000008003b78        0x0
-                0x0000000008003b78                . = ALIGN (0x4)
-                0x0000000008003b78                __exidx_start = .
+.ARM            0x0000000008004b38        0x0
+                0x0000000008004b38                . = ALIGN (0x4)
+                0x0000000008004b38                __exidx_start = .
  *(.ARM.exidx*)
-                0x0000000008003b78                __exidx_end = .
-                0x0000000008003b78                . = ALIGN (0x4)
+                0x0000000008004b38                __exidx_end = .
+                0x0000000008004b38                . = ALIGN (0x4)
 
-.preinit_array  0x0000000008003b78        0x0
-                0x0000000008003b78                . = ALIGN (0x4)
-                0x0000000008003b78                PROVIDE (__preinit_array_start = .)
+.preinit_array  0x0000000008004b38        0x0
+                0x0000000008004b38                . = ALIGN (0x4)
+                0x0000000008004b38                PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x0000000008003b78                PROVIDE (__preinit_array_end = .)
-                0x0000000008003b78                . = ALIGN (0x4)
+                0x0000000008004b38                PROVIDE (__preinit_array_end = .)
+                0x0000000008004b38                . = ALIGN (0x4)
 
-.init_array     0x0000000008003b78        0x8
-                0x0000000008003b78                . = ALIGN (0x4)
-                0x0000000008003b78                PROVIDE (__init_array_start = .)
+.init_array     0x0000000008004b38        0x8
+                0x0000000008004b38                . = ALIGN (0x4)
+                0x0000000008004b38                PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  .init_array.00000
-                0x0000000008003b78        0x4 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-__call_atexit.o)
+                0x0000000008004b38        0x4 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-__call_atexit.o)
  *(.init_array*)
- .init_array    0x0000000008003b7c        0x4 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
-                0x0000000008003b80                PROVIDE (__init_array_end = .)
-                0x0000000008003b80                . = ALIGN (0x4)
+ .init_array    0x0000000008004b3c        0x4 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+                0x0000000008004b40                PROVIDE (__init_array_end = .)
+                0x0000000008004b40                . = ALIGN (0x4)
 
-.fini_array     0x0000000008003b80        0x4
-                0x0000000008003b80                . = ALIGN (0x4)
-                0x0000000008003b80                PROVIDE (__fini_array_start = .)
+.fini_array     0x0000000008004b40        0x4
+                0x0000000008004b40                . = ALIGN (0x4)
+                0x0000000008004b40                PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x0000000008003b80        0x4 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
-                0x0000000008003b84                PROVIDE (__fini_array_end = .)
-                0x0000000008003b84                . = ALIGN (0x4)
-                0x0000000008003b84                _sidata = LOADADDR (.data)
+ .fini_array    0x0000000008004b40        0x4 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+                0x0000000008004b44                PROVIDE (__fini_array_end = .)
+                0x0000000008004b44                . = ALIGN (0x4)
+                0x0000000008004b44                _sidata = LOADADDR (.data)
 
-.data           0x0000000020000000      0x454 load address 0x0000000008003b84
+.data           0x0000000020000000      0x45c load address 0x0000000008004b44
                 0x0000000020000000                . = ALIGN (0x4)
                 0x0000000020000000                _sdata = .
  *(.data)
- .data          0x0000000020000000       0x14 src/system_stm32f10x.o
-                0x0000000020000000                AHBPrescTable
-                0x0000000020000010                SystemCoreClock
- .data          0x0000000020000014       0x14 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_rcc.o)
+ .data          0x0000000020000000        0x1 src/camera.o
+ *fill*         0x0000000020000001        0x3 
+ .data          0x0000000020000004       0x14 src/system_stm32f10x.o
+                0x0000000020000004                AHBPrescTable
+                0x0000000020000014                SystemCoreClock
+ .data          0x0000000020000018       0x14 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_rcc.o)
  *(.data*)
+ *fill*         0x000000002000002c        0x4 
  .data.impure_data
-                0x0000000020000028      0x428 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-impure.o)
+                0x0000000020000030      0x428 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-impure.o)
  .data.__atexit_recursive_mutex
-                0x0000000020000450        0x4 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-__call_atexit.o)
-                0x0000000020000450                __atexit_recursive_mutex
-                0x0000000020000454                . = ALIGN (0x4)
-                0x0000000020000454                _edata = .
+                0x0000000020000458        0x4 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-__call_atexit.o)
+                0x0000000020000458                __atexit_recursive_mutex
+                0x000000002000045c                . = ALIGN (0x4)
+                0x000000002000045c                _edata = .
 
-.igot.plt       0x0000000020000454        0x0 load address 0x0000000008003fd8
- .igot.plt      0x0000000020000454        0x0 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
-                0x0000000020000454                . = ALIGN (0x4)
+.igot.plt       0x000000002000045c        0x0 load address 0x0000000008004fa0
+ .igot.plt      0x000000002000045c        0x0 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+                0x000000002000045c                . = ALIGN (0x4)
 
-.bss            0x0000000020000454      0x42c load address 0x0000000008003fd8
-                0x0000000020000454                _sbss = .
-                0x0000000020000454                __bss_start__ = _sbss
+.bss            0x000000002000045c     0x16f4 load address 0x0000000008004fa0
+                0x000000002000045c                _sbss = .
+                0x000000002000045c                __bss_start__ = _sbss
  *(.bss)
- .bss           0x0000000020000454       0x1c /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
- .bss           0x0000000020000470        0x1 src/camera.o
- .bss           0x0000000020000471        0x1 src/delay.o
- *fill*         0x0000000020000472        0x2 
- .bss           0x0000000020000474      0x168 src/scheduler.o
+ .bss           0x000000002000045c       0x1c /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
+ .bss           0x0000000020000478     0x12c8 src/camera.o
+ .bss           0x0000000020001740        0x1 src/delay.o
+ *fill*         0x0000000020001741        0x3 
+ .bss           0x0000000020001744      0x168 src/scheduler.o
  *(.bss*)
  *(COMMON)
- COMMON         0x00000000200005dc      0x280 src/camera.o
-                0x00000000200005dc                rowdata
- COMMON         0x000000002000085c       0x21 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-lock.o)
-                0x000000002000085c                __lock___atexit_recursive_mutex
-                0x0000000020000860                __lock___arc4random_mutex
-                0x0000000020000864                __lock___env_recursive_mutex
-                0x0000000020000868                __lock___sinit_recursive_mutex
-                0x000000002000086c                __lock___malloc_recursive_mutex
-                0x0000000020000870                __lock___at_quick_exit_mutex
-                0x0000000020000874                __lock___dd_hash_mutex
-                0x0000000020000878                __lock___tz_mutex
-                0x000000002000087c                __lock___sfp_recursive_mutex
-                0x0000000020000880                . = ALIGN (0x4)
- *fill*         0x000000002000087d        0x3 
-                0x0000000020000880                _ebss = .
-                0x0000000020000880                __bss_end__ = _ebss
+ COMMON         0x00000000200018ac      0x280 src/camera.o
+                0x00000000200018ac                rowdata
+ COMMON         0x0000000020001b2c       0x21 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-lock.o)
+                0x0000000020001b2c                __lock___atexit_recursive_mutex
+                0x0000000020001b30                __lock___arc4random_mutex
+                0x0000000020001b34                __lock___env_recursive_mutex
+                0x0000000020001b38                __lock___sinit_recursive_mutex
+                0x0000000020001b3c                __lock___malloc_recursive_mutex
+                0x0000000020001b40                __lock___at_quick_exit_mutex
+                0x0000000020001b44                __lock___dd_hash_mutex
+                0x0000000020001b48                __lock___tz_mutex
+                0x0000000020001b4c                __lock___sfp_recursive_mutex
+                0x0000000020001b50                . = ALIGN (0x4)
+ *fill*         0x0000000020001b4d        0x3 
+                0x0000000020001b50                _ebss = .
+                0x0000000020001b50                __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x0000000020000880      0x400 load address 0x0000000008003fd8
-                0x0000000020000880                . = ALIGN (0x8)
-                0x0000000020000880                PROVIDE (end = .)
+                0x0000000020001b50      0x400 load address 0x0000000008004fa0
+                0x0000000020001b50                . = ALIGN (0x8)
+                0x0000000020001b50                PROVIDE (end = .)
                 [!provide]                        PROVIDE (_end = .)
-                0x0000000020000880                . = (. + _Min_Heap_Size)
-                0x0000000020000c80                . = (. + _Min_Stack_Size)
- *fill*         0x0000000020000880      0x400 
-                0x0000000020000c80                . = ALIGN (0x8)
+                0x0000000020001b50                . = (. + _Min_Heap_Size)
+                0x0000000020001f50                . = (. + _Min_Stack_Size)
+ *fill*         0x0000000020001b50      0x400 
+                0x0000000020001f50                . = ALIGN (0x8)
 
 /DISCARD/
  libc.a(*)
@@ -2804,338 +3318,368 @@ LOAD /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.e
  .ARM.attributes
                 0x0000000000000347       0x21 startup/startup_stm32.o
  .ARM.attributes
-                0x0000000000000368       0x33 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
+                0x0000000000000368       0x33 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
  .ARM.attributes
-                0x000000000000039b       0x33 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
+                0x000000000000039b       0x33 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
  .ARM.attributes
-                0x00000000000003ce       0x33 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
+                0x00000000000003ce       0x33 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
  .ARM.attributes
-                0x0000000000000401       0x33 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_rcc.o)
+                0x0000000000000401       0x33 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
  .ARM.attributes
-                0x0000000000000434       0x33 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_spi.o)
+                0x0000000000000434       0x33 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
  .ARM.attributes
-                0x0000000000000467       0x33 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_tim.o)
+                0x0000000000000467       0x33 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_rcc.o)
  .ARM.attributes
-                0x000000000000049a       0x2d /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-impure.o)
+                0x000000000000049a       0x33 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_spi.o)
  .ARM.attributes
-                0x00000000000004c7       0x2d /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-init.o)
+                0x00000000000004cd       0x33 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_tim.o)
  .ARM.attributes
-                0x00000000000004f4       0x2d /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-__call_atexit.o)
+                0x0000000000000500       0x2d /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-impure.o)
  .ARM.attributes
-                0x0000000000000521       0x2d /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-atexit.o)
+                0x000000000000052d       0x2d /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-init.o)
  .ARM.attributes
-                0x000000000000054e       0x2d /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-fini.o)
+                0x000000000000055a       0x2d /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-strlen-stub.o)
  .ARM.attributes
-                0x000000000000057b       0x2d /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-lock.o)
+                0x0000000000000587       0x2d /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-__call_atexit.o)
  .ARM.attributes
-                0x00000000000005a8       0x2d /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-__atexit.o)
+                0x00000000000005b4       0x2d /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-atexit.o)
  .ARM.attributes
-                0x00000000000005d5       0x1d /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
+                0x00000000000005e1       0x2d /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-fini.o)
+ .ARM.attributes
+                0x000000000000060e       0x2d /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-lock.o)
+ .ARM.attributes
+                0x000000000000063b       0x2d /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-__atexit.o)
+ .ARM.attributes
+                0x0000000000000668       0x1d /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
 OUTPUT(Bluepill.elf elf32-littlearm)
 
-.debug_info     0x0000000000000000    0x175be
- .debug_info    0x0000000000000000      0xbe8 src/camera.o
- .debug_info    0x0000000000000be8      0x19d src/delay.o
- .debug_info    0x0000000000000d85      0x315 src/gpio.o
- .debug_info    0x000000000000109a      0xd13 src/i2c.o
- .debug_info    0x0000000000001dad     0xb6a0 src/ili9341.o
- .debug_info    0x000000000000d44d       0xd9 src/leds.o
- .debug_info    0x000000000000d526      0x194 src/main.o
- .debug_info    0x000000000000d6ba      0x108 src/mcuperipherals.o
- .debug_info    0x000000000000d7c2      0x5d4 src/ov7670.o
- .debug_info    0x000000000000dd96      0x7fa src/scheduler.o
- .debug_info    0x000000000000e590      0x256 src/services.o
- .debug_info    0x000000000000e7e6      0x67d src/spi.o
- .debug_info    0x000000000000ee63      0x13c src/stm32f10x_it.o
- .debug_info    0x000000000000ef9f      0x474 src/system_stm32f10x.o
- .debug_info    0x000000000000f413      0x8df src/timer.o
- .debug_info    0x000000000000fcf2       0x22 startup/startup_stm32.o
- .debug_info    0x000000000000fd14      0x708 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
- .debug_info    0x000000000001041c      0xb45 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
- .debug_info    0x0000000000010f61     0x12bf /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
- .debug_info    0x0000000000012220      0xc8d /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_rcc.o)
- .debug_info    0x0000000000012ead      0xf8f /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_spi.o)
- .debug_info    0x0000000000013e3c     0x3782 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_tim.o)
+.debug_info     0x0000000000000000    0x18cdd
+ .debug_info    0x0000000000000000     0x192d src/camera.o
+ .debug_info    0x000000000000192d      0x19d src/delay.o
+ .debug_info    0x0000000000001aca      0x366 src/gpio.o
+ .debug_info    0x0000000000001e30      0xd13 src/i2c.o
+ .debug_info    0x0000000000002b43     0xb593 src/ili9341.o
+ .debug_info    0x000000000000e0d6       0xd9 src/leds.o
+ .debug_info    0x000000000000e1af      0x194 src/main.o
+ .debug_info    0x000000000000e343      0x108 src/mcuperipherals.o
+ .debug_info    0x000000000000e44b      0x480 src/ov7670.o
+ .debug_info    0x000000000000e8cb      0x7fa src/scheduler.o
+ .debug_info    0x000000000000f0c5      0x350 src/services.o
+ .debug_info    0x000000000000f415      0x67d src/spi.o
+ .debug_info    0x000000000000fa92      0x1c3 src/stm32f10x_it.o
+ .debug_info    0x000000000000fc55      0x474 src/system_stm32f10x.o
+ .debug_info    0x00000000000100c9      0x8df src/timer.o
+ .debug_info    0x00000000000109a8       0x22 startup/startup_stm32.o
+ .debug_info    0x00000000000109ca      0x5f1 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_info    0x0000000000010fbb      0x708 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
+ .debug_info    0x00000000000116c3      0x478 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_info    0x0000000000011b3b      0xb45 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
+ .debug_info    0x0000000000012680     0x12bf /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
+ .debug_info    0x000000000001393f      0xc8d /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_rcc.o)
+ .debug_info    0x00000000000145cc      0xf8f /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_spi.o)
+ .debug_info    0x000000000001555b     0x3782 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_tim.o)
 
-.debug_abbrev   0x0000000000000000     0x265d
- .debug_abbrev  0x0000000000000000      0x281 src/camera.o
- .debug_abbrev  0x0000000000000281      0x143 src/delay.o
- .debug_abbrev  0x00000000000003c4      0x14d src/gpio.o
- .debug_abbrev  0x0000000000000511      0x22a src/i2c.o
- .debug_abbrev  0x000000000000073b      0x40f src/ili9341.o
- .debug_abbrev  0x0000000000000b4a       0xa8 src/leds.o
- .debug_abbrev  0x0000000000000bf2       0xcd src/main.o
- .debug_abbrev  0x0000000000000cbf       0xa7 src/mcuperipherals.o
- .debug_abbrev  0x0000000000000d66      0x1f6 src/ov7670.o
- .debug_abbrev  0x0000000000000f5c      0x2e5 src/scheduler.o
- .debug_abbrev  0x0000000000001241      0x166 src/services.o
- .debug_abbrev  0x00000000000013a7      0x1cd src/spi.o
- .debug_abbrev  0x0000000000001574       0xe4 src/stm32f10x_it.o
- .debug_abbrev  0x0000000000001658      0x1bc src/system_stm32f10x.o
- .debug_abbrev  0x0000000000001814      0x1c1 src/timer.o
- .debug_abbrev  0x00000000000019d5       0x12 startup/startup_stm32.o
- .debug_abbrev  0x00000000000019e7      0x1b3 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
- .debug_abbrev  0x0000000000001b9a      0x235 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
- .debug_abbrev  0x0000000000001dcf      0x1ff /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
- .debug_abbrev  0x0000000000001fce      0x20b /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_rcc.o)
- .debug_abbrev  0x00000000000021d9      0x200 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_spi.o)
- .debug_abbrev  0x00000000000023d9      0x284 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_tim.o)
+.debug_abbrev   0x0000000000000000     0x2adb
+ .debug_abbrev  0x0000000000000000      0x421 src/camera.o
+ .debug_abbrev  0x0000000000000421      0x143 src/delay.o
+ .debug_abbrev  0x0000000000000564      0x14d src/gpio.o
+ .debug_abbrev  0x00000000000006b1      0x22a src/i2c.o
+ .debug_abbrev  0x00000000000008db      0x3fe src/ili9341.o
+ .debug_abbrev  0x0000000000000cd9       0xa8 src/leds.o
+ .debug_abbrev  0x0000000000000d81       0xcd src/main.o
+ .debug_abbrev  0x0000000000000e4e       0xa7 src/mcuperipherals.o
+ .debug_abbrev  0x0000000000000ef5      0x175 src/ov7670.o
+ .debug_abbrev  0x000000000000106a      0x2e5 src/scheduler.o
+ .debug_abbrev  0x000000000000134f      0x14e src/services.o
+ .debug_abbrev  0x000000000000149d      0x1cd src/spi.o
+ .debug_abbrev  0x000000000000166a      0x116 src/stm32f10x_it.o
+ .debug_abbrev  0x0000000000001780      0x1bc src/system_stm32f10x.o
+ .debug_abbrev  0x000000000000193c      0x1c1 src/timer.o
+ .debug_abbrev  0x0000000000001afd       0x12 startup/startup_stm32.o
+ .debug_abbrev  0x0000000000001b0f      0x1a3 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_abbrev  0x0000000000001cb2      0x1b3 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
+ .debug_abbrev  0x0000000000001e65      0x1b3 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_abbrev  0x0000000000002018      0x235 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
+ .debug_abbrev  0x000000000000224d      0x1ff /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
+ .debug_abbrev  0x000000000000244c      0x20b /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_rcc.o)
+ .debug_abbrev  0x0000000000002657      0x200 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_spi.o)
+ .debug_abbrev  0x0000000000002857      0x284 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_tim.o)
 
-.debug_loc      0x0000000000000000     0x7fa1
- .debug_loc     0x0000000000000000       0xbb src/camera.o
- .debug_loc     0x00000000000000bb       0x35 src/delay.o
- .debug_loc     0x00000000000000f0      0x2c8 src/i2c.o
- .debug_loc     0x00000000000003b8     0x1e87 src/ili9341.o
- .debug_loc     0x000000000000223f      0x2e6 src/ov7670.o
- .debug_loc     0x0000000000002525      0x155 src/scheduler.o
- .debug_loc     0x000000000000267a       0x13 src/services.o
- .debug_loc     0x000000000000268d       0xa6 src/spi.o
- .debug_loc     0x0000000000002733       0xbc src/system_stm32f10x.o
- .debug_loc     0x00000000000027ef      0x3d0 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
- .debug_loc     0x0000000000002bbf      0x8f6 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
- .debug_loc     0x00000000000034b5      0xd1b /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
- .debug_loc     0x00000000000041d0      0x9a6 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_rcc.o)
- .debug_loc     0x0000000000004b76      0x950 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_spi.o)
- .debug_loc     0x00000000000054c6     0x2adb /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_tim.o)
+.debug_loc      0x0000000000000000     0x8653
+ .debug_loc     0x0000000000000000      0x554 src/camera.o
+ .debug_loc     0x0000000000000554       0x35 src/delay.o
+ .debug_loc     0x0000000000000589      0x2c8 src/i2c.o
+ .debug_loc     0x0000000000000851     0x1e96 src/ili9341.o
+ .debug_loc     0x00000000000026e7       0xdd src/ov7670.o
+ .debug_loc     0x00000000000027c4      0x155 src/scheduler.o
+ .debug_loc     0x0000000000002919       0x13 src/services.o
+ .debug_loc     0x000000000000292c       0xa6 src/spi.o
+ .debug_loc     0x00000000000029d2       0xbc src/system_stm32f10x.o
+ .debug_loc     0x0000000000002a8e      0x1fa /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_loc     0x0000000000002c88      0x3d0 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
+ .debug_loc     0x0000000000003058      0x219 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_loc     0x0000000000003271      0x8f6 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
+ .debug_loc     0x0000000000003b67      0xd1b /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
+ .debug_loc     0x0000000000004882      0x9a6 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_rcc.o)
+ .debug_loc     0x0000000000005228      0x950 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_spi.o)
+ .debug_loc     0x0000000000005b78     0x2adb /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_tim.o)
 
-.debug_aranges  0x0000000000000000      0xaf0
+.debug_aranges  0x0000000000000000      0xc08
  .debug_aranges
-                0x0000000000000000       0x40 src/camera.o
+                0x0000000000000000       0xb0 src/camera.o
  .debug_aranges
-                0x0000000000000040       0x28 src/delay.o
+                0x00000000000000b0       0x28 src/delay.o
  .debug_aranges
-                0x0000000000000068       0x20 src/gpio.o
+                0x00000000000000d8       0x20 src/gpio.o
  .debug_aranges
-                0x0000000000000088       0x58 src/i2c.o
+                0x00000000000000f8       0x58 src/i2c.o
  .debug_aranges
-                0x00000000000000e0       0xc8 src/ili9341.o
+                0x0000000000000150       0xc8 src/ili9341.o
  .debug_aranges
-                0x00000000000001a8       0x20 src/leds.o
+                0x0000000000000218       0x20 src/leds.o
  .debug_aranges
-                0x00000000000001c8       0x28 src/main.o
+                0x0000000000000238       0x28 src/main.o
  .debug_aranges
-                0x00000000000001f0       0x20 src/mcuperipherals.o
+                0x0000000000000260       0x20 src/mcuperipherals.o
  .debug_aranges
-                0x0000000000000210       0x38 src/ov7670.o
+                0x0000000000000280       0x38 src/ov7670.o
  .debug_aranges
-                0x0000000000000248       0x58 src/scheduler.o
+                0x00000000000002b8       0x58 src/scheduler.o
  .debug_aranges
-                0x00000000000002a0       0x38 src/services.o
+                0x0000000000000310       0x40 src/services.o
  .debug_aranges
-                0x00000000000002d8       0x40 src/spi.o
+                0x0000000000000350       0x40 src/spi.o
  .debug_aranges
-                0x0000000000000318       0x48 src/stm32f10x_it.o
+                0x0000000000000390       0x50 src/stm32f10x_it.o
  .debug_aranges
-                0x0000000000000360       0x28 src/system_stm32f10x.o
+                0x00000000000003e0       0x28 src/system_stm32f10x.o
  .debug_aranges
-                0x0000000000000388       0x40 src/timer.o
+                0x0000000000000408       0x40 src/timer.o
  .debug_aranges
-                0x00000000000003c8       0x28 startup/startup_stm32.o
+                0x0000000000000448       0x28 startup/startup_stm32.o
  .debug_aranges
-                0x00000000000003f0       0x70 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
+                0x0000000000000470       0x40 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
  .debug_aranges
-                0x0000000000000460       0xa8 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
+                0x00000000000004b0       0x70 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
  .debug_aranges
-                0x0000000000000508      0x120 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
+                0x0000000000000520       0x58 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
  .debug_aranges
-                0x0000000000000628      0x118 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_rcc.o)
+                0x0000000000000578       0xa8 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
  .debug_aranges
-                0x0000000000000740       0xd0 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_spi.o)
+                0x0000000000000620      0x120 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
  .debug_aranges
-                0x0000000000000810      0x2e0 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_tim.o)
+                0x0000000000000740      0x118 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_rcc.o)
+ .debug_aranges
+                0x0000000000000858       0xd0 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_spi.o)
+ .debug_aranges
+                0x0000000000000928      0x2e0 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_tim.o)
 
-.debug_ranges   0x0000000000000000     0x1258
- .debug_ranges  0x0000000000000000       0x30 src/camera.o
- .debug_ranges  0x0000000000000030       0x38 src/delay.o
- .debug_ranges  0x0000000000000068       0x10 src/gpio.o
- .debug_ranges  0x0000000000000078       0x60 src/i2c.o
- .debug_ranges  0x00000000000000d8      0x7d8 src/ili9341.o
- .debug_ranges  0x00000000000008b0       0x10 src/leds.o
- .debug_ranges  0x00000000000008c0       0x18 src/main.o
- .debug_ranges  0x00000000000008d8       0x10 src/mcuperipherals.o
- .debug_ranges  0x00000000000008e8       0x50 src/ov7670.o
- .debug_ranges  0x0000000000000938       0xb0 src/scheduler.o
- .debug_ranges  0x00000000000009e8       0x28 src/services.o
- .debug_ranges  0x0000000000000a10       0x68 src/spi.o
- .debug_ranges  0x0000000000000a78       0x38 src/stm32f10x_it.o
- .debug_ranges  0x0000000000000ab0       0x40 src/system_stm32f10x.o
- .debug_ranges  0x0000000000000af0       0x48 src/timer.o
- .debug_ranges  0x0000000000000b38       0x20 startup/startup_stm32.o
- .debug_ranges  0x0000000000000b58       0x60 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
- .debug_ranges  0x0000000000000bb8       0x98 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
- .debug_ranges  0x0000000000000c50      0x110 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
- .debug_ranges  0x0000000000000d60      0x108 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_rcc.o)
- .debug_ranges  0x0000000000000e68       0xc0 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_spi.o)
- .debug_ranges  0x0000000000000f28      0x330 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_tim.o)
+.debug_ranges   0x0000000000000000     0x13d0
+ .debug_ranges  0x0000000000000000      0x170 src/camera.o
+ .debug_ranges  0x0000000000000170       0x38 src/delay.o
+ .debug_ranges  0x00000000000001a8       0x10 src/gpio.o
+ .debug_ranges  0x00000000000001b8       0x60 src/i2c.o
+ .debug_ranges  0x0000000000000218      0x790 src/ili9341.o
+ .debug_ranges  0x00000000000009a8       0x10 src/leds.o
+ .debug_ranges  0x00000000000009b8       0x18 src/main.o
+ .debug_ranges  0x00000000000009d0       0x10 src/mcuperipherals.o
+ .debug_ranges  0x00000000000009e0       0x48 src/ov7670.o
+ .debug_ranges  0x0000000000000a28       0xb0 src/scheduler.o
+ .debug_ranges  0x0000000000000ad8       0x30 src/services.o
+ .debug_ranges  0x0000000000000b08       0x68 src/spi.o
+ .debug_ranges  0x0000000000000b70       0x40 src/stm32f10x_it.o
+ .debug_ranges  0x0000000000000bb0       0x40 src/system_stm32f10x.o
+ .debug_ranges  0x0000000000000bf0       0x48 src/timer.o
+ .debug_ranges  0x0000000000000c38       0x20 startup/startup_stm32.o
+ .debug_ranges  0x0000000000000c58       0x30 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_ranges  0x0000000000000c88       0x60 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
+ .debug_ranges  0x0000000000000ce8       0x48 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_ranges  0x0000000000000d30       0x98 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
+ .debug_ranges  0x0000000000000dc8      0x110 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
+ .debug_ranges  0x0000000000000ed8      0x108 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_rcc.o)
+ .debug_ranges  0x0000000000000fe0       0xc0 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_spi.o)
+ .debug_ranges  0x00000000000010a0      0x330 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_tim.o)
 
-.debug_macro    0x0000000000000000    0x12304
- .debug_macro   0x0000000000000000      0x1fa src/camera.o
- .debug_macro   0x00000000000001fa      0xa66 src/camera.o
- .debug_macro   0x0000000000000c60       0x5c src/camera.o
- .debug_macro   0x0000000000000cbc       0x22 src/camera.o
- .debug_macro   0x0000000000000cde       0x22 src/camera.o
- .debug_macro   0x0000000000000d00       0x8e src/camera.o
- .debug_macro   0x0000000000000d8e       0x51 src/camera.o
- .debug_macro   0x0000000000000ddf       0xef src/camera.o
- .debug_macro   0x0000000000000ece       0x6a src/camera.o
- .debug_macro   0x0000000000000f38      0x1df src/camera.o
- .debug_macro   0x0000000000001117      0x69f src/camera.o
- .debug_macro   0x00000000000017b6     0x7dbe src/camera.o
- .debug_macro   0x0000000000009574      0x2df src/camera.o
- .debug_macro   0x0000000000009853      0x144 src/camera.o
- .debug_macro   0x0000000000009997      0x3cf src/camera.o
- .debug_macro   0x0000000000009d66       0xc8 src/camera.o
- .debug_macro   0x0000000000009e2e      0x17a src/camera.o
- .debug_macro   0x0000000000009fa8       0xac src/camera.o
- .debug_macro   0x000000000000a054      0x3ad src/camera.o
- .debug_macro   0x000000000000a401       0x9a src/camera.o
- .debug_macro   0x000000000000a49b      0x2cf src/camera.o
- .debug_macro   0x000000000000a76a      0x279 src/camera.o
- .debug_macro   0x000000000000a9e3      0x2ac src/camera.o
- .debug_macro   0x000000000000ac8f      0x2b1 src/camera.o
- .debug_macro   0x000000000000af40       0x64 src/camera.o
- .debug_macro   0x000000000000afa4       0x82 src/camera.o
- .debug_macro   0x000000000000b026      0x3e2 src/camera.o
- .debug_macro   0x000000000000b408       0x58 src/camera.o
- .debug_macro   0x000000000000b460      0x341 src/camera.o
- .debug_macro   0x000000000000b7a1      0x2c4 src/camera.o
- .debug_macro   0x000000000000ba65      0x711 src/camera.o
- .debug_macro   0x000000000000c176      0x220 src/camera.o
- .debug_macro   0x000000000000c396       0x34 src/camera.o
- .debug_macro   0x000000000000c3ca       0x10 src/camera.o
- .debug_macro   0x000000000000c3da       0x35 src/camera.o
- .debug_macro   0x000000000000c40f       0x64 src/camera.o
- .debug_macro   0x000000000000c473      0x3a2 src/camera.o
- .debug_macro   0x000000000000c815       0xe3 src/camera.o
- .debug_macro   0x000000000000c8f8      0x13c src/camera.o
- .debug_macro   0x000000000000ca34       0x16 src/camera.o
- .debug_macro   0x000000000000ca4a       0x22 src/camera.o
- .debug_macro   0x000000000000ca6c       0x10 src/camera.o
- .debug_macro   0x000000000000ca7c      0x202 src/camera.o
- .debug_macro   0x000000000000cc7e       0x16 src/camera.o
- .debug_macro   0x000000000000cc94      0x1cc src/delay.o
- .debug_macro   0x000000000000ce60       0x10 src/delay.o
- .debug_macro   0x000000000000ce70       0xdd src/delay.o
- .debug_macro   0x000000000000cf4d      0x19a src/gpio.o
- .debug_macro   0x000000000000d0e7       0x8b src/gpio.o
- .debug_macro   0x000000000000d172      0x1b2 src/i2c.o
- .debug_macro   0x000000000000d324       0x10 src/i2c.o
- .debug_macro   0x000000000000d334      0x3a8 src/i2c.o
- .debug_macro   0x000000000000d6dc      0x2f0 src/ili9341.o
- .debug_macro   0x000000000000d9cc      0x1fc src/ili9341.o
- .debug_macro   0x000000000000dbc8       0x18 src/ili9341.o
- .debug_macro   0x000000000000dbe0       0x5e src/ili9341.o
- .debug_macro   0x000000000000dc3e       0x35 src/ili9341.o
- .debug_macro   0x000000000000dc73       0x34 src/ili9341.o
- .debug_macro   0x000000000000dca7       0x16 src/ili9341.o
- .debug_macro   0x000000000000dcbd      0x10e src/ili9341.o
- .debug_macro   0x000000000000ddcb       0x8d src/ili9341.o
- .debug_macro   0x000000000000de58       0x58 src/ili9341.o
- .debug_macro   0x000000000000deb0       0x1f src/ili9341.o
- .debug_macro   0x000000000000decf       0x43 src/ili9341.o
- .debug_macro   0x000000000000df12       0x20 src/ili9341.o
- .debug_macro   0x000000000000df32      0x18e src/ili9341.o
- .debug_macro   0x000000000000e0c0      0x330 src/ili9341.o
- .debug_macro   0x000000000000e3f0       0x16 src/ili9341.o
- .debug_macro   0x000000000000e406       0x29 src/ili9341.o
- .debug_macro   0x000000000000e42f       0x16 src/ili9341.o
- .debug_macro   0x000000000000e445       0x35 src/ili9341.o
- .debug_macro   0x000000000000e47a      0x1c6 src/leds.o
- .debug_macro   0x000000000000e640      0x1f1 src/main.o
- .debug_macro   0x000000000000e831      0x1b7 src/mcuperipherals.o
- .debug_macro   0x000000000000e9e8       0x16 src/mcuperipherals.o
- .debug_macro   0x000000000000e9fe      0x1e2 src/ov7670.o
- .debug_macro   0x000000000000ebe0      0x189 src/scheduler.o
- .debug_macro   0x000000000000ed69       0x22 src/scheduler.o
- .debug_macro   0x000000000000ed8b      0x1c2 src/services.o
- .debug_macro   0x000000000000ef4d      0x1a0 src/spi.o
- .debug_macro   0x000000000000f0ed      0x184 src/stm32f10x_it.o
- .debug_macro   0x000000000000f271      0x17e src/system_stm32f10x.o
- .debug_macro   0x000000000000f3ef      0x1b2 src/timer.o
- .debug_macro   0x000000000000f5a1       0x10 src/timer.o
- .debug_macro   0x000000000000f5b1      0x1dc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
- .debug_macro   0x000000000000f78d      0xa6c /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
- .debug_macro   0x00000000000101f9       0x10 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
- .debug_macro   0x0000000000010209      0x3a7 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
- .debug_macro   0x00000000000105b0      0x1d6 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
- .debug_macro   0x0000000000010786      0x2a6 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
- .debug_macro   0x0000000000010a2c      0x25a /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
- .debug_macro   0x0000000000010c86      0x2ab /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
- .debug_macro   0x0000000000010f31      0x2a0 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_rcc.o)
- .debug_macro   0x00000000000111d1      0x3dc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_rcc.o)
- .debug_macro   0x00000000000115ad      0x1ee /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_spi.o)
- .debug_macro   0x000000000001179b      0x2be /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_spi.o)
- .debug_macro   0x0000000000011a59      0x1a0 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_tim.o)
- .debug_macro   0x0000000000011bf9      0x70b /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_tim.o)
+.debug_macro    0x0000000000000000    0x12990
+ .debug_macro   0x0000000000000000      0x20d src/camera.o
+ .debug_macro   0x000000000000020d      0xa66 src/camera.o
+ .debug_macro   0x0000000000000c73       0x5c src/camera.o
+ .debug_macro   0x0000000000000ccf       0x22 src/camera.o
+ .debug_macro   0x0000000000000cf1       0x22 src/camera.o
+ .debug_macro   0x0000000000000d13       0x8e src/camera.o
+ .debug_macro   0x0000000000000da1       0x51 src/camera.o
+ .debug_macro   0x0000000000000df2       0xef src/camera.o
+ .debug_macro   0x0000000000000ee1       0x6a src/camera.o
+ .debug_macro   0x0000000000000f4b      0x1df src/camera.o
+ .debug_macro   0x000000000000112a      0x69f src/camera.o
+ .debug_macro   0x00000000000017c9     0x7dbe src/camera.o
+ .debug_macro   0x0000000000009587      0x2df src/camera.o
+ .debug_macro   0x0000000000009866      0x144 src/camera.o
+ .debug_macro   0x00000000000099aa      0x3cf src/camera.o
+ .debug_macro   0x0000000000009d79       0xc8 src/camera.o
+ .debug_macro   0x0000000000009e41      0x17a src/camera.o
+ .debug_macro   0x0000000000009fbb       0xac src/camera.o
+ .debug_macro   0x000000000000a067      0x3ad src/camera.o
+ .debug_macro   0x000000000000a414       0x9a src/camera.o
+ .debug_macro   0x000000000000a4ae      0x2cf src/camera.o
+ .debug_macro   0x000000000000a77d      0x279 src/camera.o
+ .debug_macro   0x000000000000a9f6      0x2ac src/camera.o
+ .debug_macro   0x000000000000aca2      0x2b1 src/camera.o
+ .debug_macro   0x000000000000af53       0x64 src/camera.o
+ .debug_macro   0x000000000000afb7       0x82 src/camera.o
+ .debug_macro   0x000000000000b039      0x3e2 src/camera.o
+ .debug_macro   0x000000000000b41b       0x58 src/camera.o
+ .debug_macro   0x000000000000b473      0x341 src/camera.o
+ .debug_macro   0x000000000000b7b4      0x2c4 src/camera.o
+ .debug_macro   0x000000000000ba78      0x711 src/camera.o
+ .debug_macro   0x000000000000c189      0x220 src/camera.o
+ .debug_macro   0x000000000000c3a9       0x34 src/camera.o
+ .debug_macro   0x000000000000c3dd       0x10 src/camera.o
+ .debug_macro   0x000000000000c3ed       0x35 src/camera.o
+ .debug_macro   0x000000000000c422       0x64 src/camera.o
+ .debug_macro   0x000000000000c486      0x3a2 src/camera.o
+ .debug_macro   0x000000000000c828      0x197 src/camera.o
+ .debug_macro   0x000000000000c9bf      0x148 src/camera.o
+ .debug_macro   0x000000000000cb07       0x16 src/camera.o
+ .debug_macro   0x000000000000cb1d       0x22 src/camera.o
+ .debug_macro   0x000000000000cb3f       0x10 src/camera.o
+ .debug_macro   0x000000000000cb4f      0x1c6 src/camera.o
+ .debug_macro   0x000000000000cd15       0x16 src/camera.o
+ .debug_macro   0x000000000000cd2b       0x8b src/camera.o
+ .debug_macro   0x000000000000cdb6      0x1e3 src/delay.o
+ .debug_macro   0x000000000000cf99       0x10 src/delay.o
+ .debug_macro   0x000000000000cfa9      0x191 src/delay.o
+ .debug_macro   0x000000000000d13a       0x10 src/delay.o
+ .debug_macro   0x000000000000d14a      0x3a8 src/delay.o
+ .debug_macro   0x000000000000d4f2      0x19a src/gpio.o
+ .debug_macro   0x000000000000d68c      0x1b1 src/i2c.o
+ .debug_macro   0x000000000000d83d       0x10 src/i2c.o
+ .debug_macro   0x000000000000d84d      0x30d src/ili9341.o
+ .debug_macro   0x000000000000db5a      0x1c0 src/ili9341.o
+ .debug_macro   0x000000000000dd1a       0x18 src/ili9341.o
+ .debug_macro   0x000000000000dd32       0x5e src/ili9341.o
+ .debug_macro   0x000000000000dd90       0x35 src/ili9341.o
+ .debug_macro   0x000000000000ddc5       0x34 src/ili9341.o
+ .debug_macro   0x000000000000ddf9       0x16 src/ili9341.o
+ .debug_macro   0x000000000000de0f      0x10e src/ili9341.o
+ .debug_macro   0x000000000000df1d       0x8d src/ili9341.o
+ .debug_macro   0x000000000000dfaa       0x58 src/ili9341.o
+ .debug_macro   0x000000000000e002       0x1f src/ili9341.o
+ .debug_macro   0x000000000000e021       0x43 src/ili9341.o
+ .debug_macro   0x000000000000e064       0x20 src/ili9341.o
+ .debug_macro   0x000000000000e084      0x18e src/ili9341.o
+ .debug_macro   0x000000000000e212      0x330 src/ili9341.o
+ .debug_macro   0x000000000000e542       0x16 src/ili9341.o
+ .debug_macro   0x000000000000e558       0x29 src/ili9341.o
+ .debug_macro   0x000000000000e581       0x16 src/ili9341.o
+ .debug_macro   0x000000000000e597       0x35 src/ili9341.o
+ .debug_macro   0x000000000000e5cc      0x1dd src/leds.o
+ .debug_macro   0x000000000000e7a9      0x1f4 src/main.o
+ .debug_macro   0x000000000000e99d      0x1ca src/mcuperipherals.o
+ .debug_macro   0x000000000000eb67       0x16 src/mcuperipherals.o
+ .debug_macro   0x000000000000eb7d       0x4c src/mcuperipherals.o
+ .debug_macro   0x000000000000ebc9      0x1e5 src/ov7670.o
+ .debug_macro   0x000000000000edae      0x189 src/scheduler.o
+ .debug_macro   0x000000000000ef37       0x22 src/scheduler.o
+ .debug_macro   0x000000000000ef59      0x1e2 src/services.o
+ .debug_macro   0x000000000000f13b      0x1a0 src/spi.o
+ .debug_macro   0x000000000000f2db      0x1f6 src/stm32f10x_it.o
+ .debug_macro   0x000000000000f4d1      0x17e src/system_stm32f10x.o
+ .debug_macro   0x000000000000f64f      0x1b1 src/timer.o
+ .debug_macro   0x000000000000f800       0x10 src/timer.o
+ .debug_macro   0x000000000000f810      0x18a /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_macro   0x000000000000f99a      0xa6c /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_macro   0x0000000000010406       0x10 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_macro   0x0000000000010416       0x85 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_macro   0x000000000001049b      0x1dc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
+ .debug_macro   0x0000000000010677      0x3a7 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
+ .debug_macro   0x0000000000010a1e      0x18a /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_macro   0x0000000000010ba8       0x94 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_macro   0x0000000000010c3c      0x1d6 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
+ .debug_macro   0x0000000000010e12      0x2a6 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
+ .debug_macro   0x00000000000110b8      0x25a /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
+ .debug_macro   0x0000000000011312      0x2ab /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
+ .debug_macro   0x00000000000115bd      0x2a0 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_rcc.o)
+ .debug_macro   0x000000000001185d      0x3dc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_rcc.o)
+ .debug_macro   0x0000000000011c39      0x1ee /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_spi.o)
+ .debug_macro   0x0000000000011e27      0x2be /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_spi.o)
+ .debug_macro   0x00000000000120e5      0x1a0 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_tim.o)
+ .debug_macro   0x0000000000012285      0x70b /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_tim.o)
 
-.debug_line     0x0000000000000000     0xe340
- .debug_line    0x0000000000000000      0x846 src/camera.o
- .debug_line    0x0000000000000846      0x70f src/delay.o
- .debug_line    0x0000000000000f55      0x6e4 src/gpio.o
- .debug_line    0x0000000000001639      0x7ee src/i2c.o
- .debug_line    0x0000000000001e27     0x170b src/ili9341.o
- .debug_line    0x0000000000003532      0x6e8 src/leds.o
- .debug_line    0x0000000000003c1a      0x73d src/main.o
- .debug_line    0x0000000000004357      0x6ff src/mcuperipherals.o
- .debug_line    0x0000000000004a56      0x7b1 src/ov7670.o
- .debug_line    0x0000000000005207      0x809 src/scheduler.o
- .debug_line    0x0000000000005a10      0x729 src/services.o
- .debug_line    0x0000000000006139      0x76b src/spi.o
- .debug_line    0x00000000000068a4      0x714 src/stm32f10x_it.o
- .debug_line    0x0000000000006fb8      0x721 src/system_stm32f10x.o
- .debug_line    0x00000000000076d9      0x785 src/timer.o
- .debug_line    0x0000000000007e5e       0x7c startup/startup_stm32.o
- .debug_line    0x0000000000007eda      0xaf4 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
- .debug_line    0x00000000000089ce      0xbfc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
- .debug_line    0x00000000000095ca      0xdca /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
- .debug_line    0x000000000000a394      0xb6f /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_rcc.o)
- .debug_line    0x000000000000af03      0xbdd /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_spi.o)
- .debug_line    0x000000000000bae0     0x2860 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_tim.o)
+.debug_line     0x0000000000000000     0xf6d6
+ .debug_line    0x0000000000000000      0xb5f src/camera.o
+ .debug_line    0x0000000000000b5f      0x727 src/delay.o
+ .debug_line    0x0000000000001286      0x6fe src/gpio.o
+ .debug_line    0x0000000000001984      0x7ee src/i2c.o
+ .debug_line    0x0000000000002172     0x170d src/ili9341.o
+ .debug_line    0x000000000000387f      0x700 src/leds.o
+ .debug_line    0x0000000000003f7f      0x73d src/main.o
+ .debug_line    0x00000000000046bc      0x70d src/mcuperipherals.o
+ .debug_line    0x0000000000004dc9      0x764 src/ov7670.o
+ .debug_line    0x000000000000552d      0x809 src/scheduler.o
+ .debug_line    0x0000000000005d36      0x777 src/services.o
+ .debug_line    0x00000000000064ad      0x766 src/spi.o
+ .debug_line    0x0000000000006c13      0x784 src/stm32f10x_it.o
+ .debug_line    0x0000000000007397      0x721 src/system_stm32f10x.o
+ .debug_line    0x0000000000007ab8      0x785 src/timer.o
+ .debug_line    0x000000000000823d       0x7c startup/startup_stm32.o
+ .debug_line    0x00000000000082b9      0x76d /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_line    0x0000000000008a26      0xaf4 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
+ .debug_line    0x000000000000951a      0x84a /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_line    0x0000000000009d64      0xbfc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
+ .debug_line    0x000000000000a960      0xdca /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
+ .debug_line    0x000000000000b72a      0xb6f /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_rcc.o)
+ .debug_line    0x000000000000c299      0xbdd /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_spi.o)
+ .debug_line    0x000000000000ce76     0x2860 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_tim.o)
 
-.debug_str      0x0000000000000000    0x55b08
- .debug_str     0x0000000000000000    0x4e9d1 src/camera.o
-                                      0x4eb50 (size before relaxing)
- .debug_str     0x000000000004e9d1       0x7f src/delay.o
-                                      0x4d2f7 (size before relaxing)
- .debug_str     0x000000000004ea50      0x579 src/gpio.o
-                                      0x4d835 (size before relaxing)
- .debug_str     0x000000000004efc9      0x17b src/i2c.o
-                                      0x4e234 (size before relaxing)
- .debug_str     0x000000000004f144     0x3130 src/ili9341.o
-                                      0x50c26 (size before relaxing)
- .debug_str     0x0000000000052274       0x1a src/leds.o
-                                      0x4d270 (size before relaxing)
- .debug_str     0x000000000005228e       0x70 src/main.o
-                                      0x4e6ac (size before relaxing)
- .debug_str     0x00000000000522fe       0x61 src/mcuperipherals.o
-                                      0x4d235 (size before relaxing)
- .debug_str     0x000000000005235f       0xb6 src/ov7670.o
-                                      0x4e0cd (size before relaxing)
- .debug_str     0x0000000000052415      0x4e7 src/scheduler.o
+.debug_str      0x0000000000000000    0x56386
+ .debug_str     0x0000000000000000    0x4f7bd src/camera.o
+                                      0x4f974 (size before relaxing)
+ .debug_str     0x000000000004f7bd       0x6c src/delay.o
+                                      0x4e355 (size before relaxing)
+ .debug_str     0x000000000004f829       0x21 src/gpio.o
+                                      0x4db54 (size before relaxing)
+ .debug_str     0x000000000004f84a      0x192 src/i2c.o
+                                      0x4e588 (size before relaxing)
+ .debug_str     0x000000000004f9dc     0x311d src/ili9341.o
+                                      0x51bee (size before relaxing)
+ .debug_str     0x0000000000052af9       0x1a src/leds.o
+                                      0x4e2ce (size before relaxing)
+ .debug_str     0x0000000000052b13       0x70 src/main.o
+                                      0x4e961 (size before relaxing)
+ .debug_str     0x0000000000052b83      0x12d src/mcuperipherals.o
+                                      0x4d620 (size before relaxing)
+ .debug_str     0x0000000000052cb0       0x82 src/ov7670.o
+                                      0x4e45b (size before relaxing)
+ .debug_str     0x0000000000052d32      0x20c src/scheduler.o
                                       0x4d331 (size before relaxing)
- .debug_str     0x00000000000528fc       0x94 src/services.o
-                                      0x4d331 (size before relaxing)
- .debug_str     0x0000000000052990      0x10a src/spi.o
-                                      0x4db4c (size before relaxing)
- .debug_str     0x0000000000052a9a       0xb8 src/stm32f10x_it.o
-                                      0x4ce4d (size before relaxing)
- .debug_str     0x0000000000052b52      0x10f src/system_stm32f10x.o
+ .debug_str     0x0000000000052f3e       0xb6 src/services.o
+                                      0x4ea3e (size before relaxing)
+ .debug_str     0x0000000000052ff4      0x10a src/spi.o
+                                      0x4ddcc (size before relaxing)
+ .debug_str     0x00000000000530fe       0xf3 src/stm32f10x_it.o
+                                      0x4e3c9 (size before relaxing)
+ .debug_str     0x00000000000531f1      0x10f src/system_stm32f10x.o
                                       0x4cef4 (size before relaxing)
- .debug_str     0x0000000000052c61      0x294 src/timer.o
-                                      0x4e303 (size before relaxing)
- .debug_str     0x0000000000052ef5       0x29 startup/startup_stm32.o
+ .debug_str     0x0000000000053300      0x294 src/timer.o
+                                      0x4e657 (size before relaxing)
+ .debug_str     0x0000000000053594       0x29 startup/startup_stm32.o
                                          0x5b (size before relaxing)
- .debug_str     0x0000000000052f1e      0x6fe /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
+ .debug_str     0x00000000000535bd      0x23a /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+                                      0x4d4c7 (size before relaxing)
+ .debug_str     0x00000000000537f7      0x5ea /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
                                       0x4d981 (size before relaxing)
- .debug_str     0x000000000005361c      0x478 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
+ .debug_str     0x0000000000053de1       0xf0 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+                                      0x4d476 (size before relaxing)
+ .debug_str     0x0000000000053ed1      0x44e /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
                                       0x4d856 (size before relaxing)
- .debug_str     0x0000000000053a94      0x7be /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
+ .debug_str     0x000000000005431f      0x7b1 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
                                       0x4dc0a (size before relaxing)
- .debug_str     0x0000000000054252      0xa08 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_rcc.o)
+ .debug_str     0x0000000000054ad0      0xa08 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_rcc.o)
                                       0x4de25 (size before relaxing)
- .debug_str     0x0000000000054c5a      0x4bc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_spi.o)
+ .debug_str     0x00000000000554d8      0x4bc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_spi.o)
                                       0x4d97f (size before relaxing)
- .debug_str     0x0000000000055116      0x9f2 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_tim.o)
+ .debug_str     0x0000000000055994      0x9f2 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_tim.o)
                                       0x4df71 (size before relaxing)
 
 .comment        0x0000000000000000       0x7f
@@ -3155,38 +3699,43 @@ OUTPUT(Bluepill.elf elf32-littlearm)
  .comment       0x000000000000007f       0x80 src/stm32f10x_it.o
  .comment       0x000000000000007f       0x80 src/system_stm32f10x.o
  .comment       0x000000000000007f       0x80 src/timer.o
+ .comment       0x000000000000007f       0x80 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
  .comment       0x000000000000007f       0x80 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
+ .comment       0x000000000000007f       0x80 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
  .comment       0x000000000000007f       0x80 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
  .comment       0x000000000000007f       0x80 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
  .comment       0x000000000000007f       0x80 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_rcc.o)
  .comment       0x000000000000007f       0x80 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_spi.o)
  .comment       0x000000000000007f       0x80 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_tim.o)
 
-.debug_frame    0x0000000000000000     0x21e0
- .debug_frame   0x0000000000000000       0x9c src/camera.o
- .debug_frame   0x000000000000009c       0x38 src/delay.o
- .debug_frame   0x00000000000000d4       0x34 src/gpio.o
- .debug_frame   0x0000000000000108      0x10c src/i2c.o
- .debug_frame   0x0000000000000214      0x310 src/ili9341.o
- .debug_frame   0x0000000000000524       0x20 src/leds.o
- .debug_frame   0x0000000000000544       0x38 src/main.o
- .debug_frame   0x000000000000057c       0x2c src/mcuperipherals.o
- .debug_frame   0x00000000000005a8       0xac src/ov7670.o
- .debug_frame   0x0000000000000654       0xd8 src/scheduler.o
- .debug_frame   0x000000000000072c       0x70 src/services.o
- .debug_frame   0x000000000000079c       0x80 src/spi.o
- .debug_frame   0x000000000000081c       0xa0 src/stm32f10x_it.o
- .debug_frame   0x00000000000008bc       0x48 src/system_stm32f10x.o
- .debug_frame   0x0000000000000904       0xa0 src/timer.o
- .debug_frame   0x00000000000009a4      0x124 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
- .debug_frame   0x0000000000000ac8      0x1fc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
- .debug_frame   0x0000000000000cc4      0x3a8 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
- .debug_frame   0x000000000000106c      0x314 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_rcc.o)
- .debug_frame   0x0000000000001380      0x290 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_spi.o)
- .debug_frame   0x0000000000001610      0xa10 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_tim.o)
- .debug_frame   0x0000000000002020       0x2c /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-init.o)
- .debug_frame   0x000000000000204c       0x5c /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-__call_atexit.o)
- .debug_frame   0x00000000000020a8       0x20 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-atexit.o)
- .debug_frame   0x00000000000020c8       0x34 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-fini.o)
- .debug_frame   0x00000000000020fc       0xb0 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-lock.o)
- .debug_frame   0x00000000000021ac       0x34 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-__atexit.o)
+.debug_frame    0x0000000000000000     0x2510
+ .debug_frame   0x0000000000000000      0x22c src/camera.o
+ .debug_frame   0x000000000000022c       0x38 src/delay.o
+ .debug_frame   0x0000000000000264       0x38 src/gpio.o
+ .debug_frame   0x000000000000029c      0x10c src/i2c.o
+ .debug_frame   0x00000000000003a8      0x308 src/ili9341.o
+ .debug_frame   0x00000000000006b0       0x20 src/leds.o
+ .debug_frame   0x00000000000006d0       0x38 src/main.o
+ .debug_frame   0x0000000000000708       0x2c src/mcuperipherals.o
+ .debug_frame   0x0000000000000734       0x98 src/ov7670.o
+ .debug_frame   0x00000000000007cc       0xd8 src/scheduler.o
+ .debug_frame   0x00000000000008a4       0x94 src/services.o
+ .debug_frame   0x0000000000000938       0x80 src/spi.o
+ .debug_frame   0x00000000000009b8       0xbc src/stm32f10x_it.o
+ .debug_frame   0x0000000000000a74       0x48 src/system_stm32f10x.o
+ .debug_frame   0x0000000000000abc       0xa0 src/timer.o
+ .debug_frame   0x0000000000000b5c       0x94 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(misc.o)
+ .debug_frame   0x0000000000000bf0      0x124 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_dma.o)
+ .debug_frame   0x0000000000000d14       0xc4 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_exti.o)
+ .debug_frame   0x0000000000000dd8      0x1fc /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_gpio.o)
+ .debug_frame   0x0000000000000fd4      0x3a8 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_i2c.o)
+ .debug_frame   0x000000000000137c      0x314 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_rcc.o)
+ .debug_frame   0x0000000000001690      0x290 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_spi.o)
+ .debug_frame   0x0000000000001920      0xa10 /Users/daymoon/Documents/workspace/stm32f10x_peripheral_lib/Debug/libstm32f10x_peripheral_lib.a(stm32f10x_tim.o)
+ .debug_frame   0x0000000000002330       0x2c /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-init.o)
+ .debug_frame   0x000000000000235c       0x20 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-strlen-stub.o)
+ .debug_frame   0x000000000000237c       0x5c /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-__call_atexit.o)
+ .debug_frame   0x00000000000023d8       0x20 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-atexit.o)
+ .debug_frame   0x00000000000023f8       0x34 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-fini.o)
+ .debug_frame   0x000000000000242c       0xb0 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-lock.o)
+ .debug_frame   0x00000000000024dc       0x34 /Applications/Ac6/SystemWorkbench.app/Contents/Eclipse/plugins/fr.ac6.mcu.externaltools.arm-none.macos64_1.17.0.201812190825/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc.a(lib_a-__atexit.o)

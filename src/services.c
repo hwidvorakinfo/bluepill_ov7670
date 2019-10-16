@@ -6,6 +6,7 @@
  */
 
 #include "services.h"
+#include "ili9341.h"
 
 /* private prototypes */
 
@@ -39,16 +40,31 @@ void Command_service(void)
 	usart_release_Rx_buffer();
 }
 
-// obsluzna sluzba heartbeat zprav
-void Heartbeat_service(void)
+
+void camera_service(void)
 {
-//#define ALENABLED
-#ifdef ALENABLED
+	camera_service_handler();
+}
 
-	uint8_t text[] = "AL";
+void button_service(void)
+{
+	if (GPIO_ReadInputDataBit(BUTTON_PORT, BUTTON_PIN) == FALSE)
+	{
+		// tlacitko je porad stisknuto
+		if ( (camera_get_detection_status() == TRUE) || (camera_get_detected_status() == TRUE) )
+		{
+			// detekce bezi nebo bylo zdetekovano, timto stiskem ji deaktivuj
+			camera_set_detection_status(FALSE);
+			camera_set_detected_status(FALSE);
 
-	// posli zpravu
-	usart_send_text((uint8_t *)&text);				// odesli zpravu AL
-	usart_newline();
-#endif
+			ili_display_clear(ILI9341_BLACK);
+		}
+		else
+		{
+			// detekce nebezi, aktivuj ji a uloz snimek
+			camera_set_detection_status(TRUE);
+			// uloz vzorek obrazku
+			//camera_store_sample();
+		}
+	}
 }

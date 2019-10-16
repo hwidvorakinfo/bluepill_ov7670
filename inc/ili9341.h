@@ -14,18 +14,6 @@
 
 #define ILISPIPRESCALER		SPI_BaudRatePrescaler_2
 
-// Univerzalni 565 barvy, nyni negovane pro ILI9341
-#define WHITE     	~(0x0000)
-#define BLACK     	~(0xFFFF)
-#define RED       	~(0x07FF)
-#define CYAN      	~(0x0700)
-#define MAGENTA	  	~(0x07C0)
-#define GREEN	  	~(0xF83F)
-#define YELLOW	  	~(0x001F)
-#define ORANGE	  	~(0x027F)
-#define GRAY	  	~(0xA514)
-#define BLUE		~(0xFFE0)
-
 // Color definitions z https://github.com/adafruit/Adafruit_ILI9341/blob/master/Adafruit_ILI9341.h
 #define ILI9341_BLACK       0x0000  ///<   0,   0,   0
 #define ILI9341_NAVY        0x000F  ///<   0,   0, 123

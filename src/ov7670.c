@@ -36,6 +36,18 @@ static const struct regval_list qqvga_ov7670[] = {
 	{REG_VREF,0x0a},
 	{0xff, 0xff},	/* END MARKER */
 };
+static const struct regval_list custom_ov7670[] = {
+	{REG_COM14, 0x19},
+	{0x72, 0x11},
+	{0x73, 0xf1},
+	{REG_HSTART,0x16},
+	{REG_HSTOP,0x04},
+	{REG_HREF,0x24},
+	{REG_VSTART, 30},
+	{REG_VSTOP, 90},
+	{REG_VREF,0x0},
+	{0xff, 0xff},	/* END MARKER */
+};
 static const struct regval_list yuv422_ov7670[] = {
 	{REG_COM7, 0x0},	/* Selects YUV mode */
 	{REG_RGB444, 0},	/* No RGB444 please */
@@ -188,56 +200,41 @@ static void errorLed(void)
 
 }
 
-static void wrSensorRegs8_8(const struct regval_list reglist[])
-{
-	volatile uint8_t reg_addr;
-	volatile uint8_t reg_val;
-
-	const struct regval_list *next = reglist;
-
-	reg_addr = next->reg_num;
-	reg_val = next->value;
-
-	while((reg_addr != 0xff) && (reg_val != 0xff))
-	{
-		camera_WriteReg(reg_addr, reg_val);
-		next++;
-		reg_addr = next->reg_num;
-		reg_val = next->value;
-	}
-}
-
-void ov7670_setColorSpace(enum COLORSPACE color){
+void ov7670_setColorSpace(enum OV7670_COLORSPACE color){
 	switch(color){
-		case YUV422:
+		case OV7670_YUV422:
 			wrSensorRegs8_8(yuv422_ov7670);
 		break;
-		case RGB565:
+		case OV7670_RGB565:
 			wrSensorRegs8_8(rgb565_ov7670);
 			uint8_t temp=camera_ReadReg(0x11);
 			camera_WriteReg(0x11,temp);//according to the Linux kernel driver rgb565 PCLK needs rewriting
 		break;
-		case BAYER_RGB:
+		case OV7670_BAYER_RGB:
 			wrSensorRegs8_8(bayerRGB_ov7670);
 		break;
 	}
 }
 
-void ov7670_setRes(enum RESOLUTION res)
+void ov7670_setRes(enum OV7670_RESOLUTION res)
 {
 	switch(res)
 	{
-		case VGA:
+		case OV7670_VGA:
 			camera_WriteReg(REG_COM3,0);	// REG_COM3
 			wrSensorRegs8_8(vga_ov7670);
 		break;
-		case QVGA:
+		case OV7670_QVGA:
 			camera_WriteReg(REG_COM3, 4);	// REG_COM3 enable scaling
 			wrSensorRegs8_8(qvga_ov7670);
 		break;
-		case QQVGA:
+		case OV7670_QQVGA:
 			camera_WriteReg(REG_COM3, 4);	// REG_COM3 enable scaling
 			wrSensorRegs8_8(qqvga_ov7670);
+		break;
+		case OV7670_CUSTOM:
+			camera_WriteReg(REG_COM3, 4);	// REG_COM3 enable scaling
+			wrSensorRegs8_8(custom_ov7670);
 		break;
 	}
 }

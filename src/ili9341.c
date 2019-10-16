@@ -15,6 +15,8 @@
 static uint16_t ili_width = ILI9341_TFTWIDTH;
 static uint16_t ili_height = ILI9341_TFTHEIGHT;
 
+#define USEFONT
+#ifdef USEFONT
 #define CHARHEIGHT		12
 #define CHARWIDTH		12
 const uint16_t ASCII12x12_Table [] = {
@@ -114,6 +116,7 @@ const uint16_t ASCII12x12_Table [] = {
     0x0000,0x4000,0x2000,0x2000,0x2000,0x2000,0x1000,0x2000,0x2000,0x2000,0x2000,0x2000,	// }
     0x0000,0x1000,0x1800,0x1C00,0xFE00,0x1C00,0x1800,0x1000,0x0000,0x0000,0x0000,0x0000,	// ~ - sipka doprava jako specialni symbol
     0x0000,0x0000,0x7000,0x5000,0x5000,0x5000,0x5000,0x5000,0x5000,0x7000,0x0000,0x0000};	//
+#endif
 
 #define INV           	80
 #define NOINV         	0
@@ -282,9 +285,9 @@ void lcd_config(void)
 	*/
 
 	ili_set_rotation(3);
+	ili_display_clear(ILI9341_BLACK);
 	//ili_display_clear(ILI9341_BLACK);
-	ili_display_clear(ILI9341_BLUE);
-	ili_draw_rectangle(10, 10, 310, 230, ILI9341_RED);
+	//ili_draw_rectangle(10, 10, 310, 230, ILI9341_RED);
 }
 
 void ili_display_clear(uint16_t color)
@@ -464,6 +467,7 @@ void ili_draw_rectangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint
   ili_draw_line(x1, y2, x1, y1, color);
 }
 
+#ifdef USEFONT
 void ili_print_char(uint8_t character, uint8_t xpos, uint16_t ypos, uint16_t color, uint8_t inv)
 {
   uint8_t line;
@@ -531,6 +535,7 @@ void ili_text_print(uint8_t x, uint16_t y, uint8_t *text, uint16_t color, uint8_
 		}
 	}
 }
+#endif
 
 void ili_draw_circle(uint16_t x, uint16_t y, uint16_t r, uint16_t color)
 {
