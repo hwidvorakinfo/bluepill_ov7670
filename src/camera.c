@@ -76,7 +76,7 @@ void camera_config(void)
 	// test cteni adresy kamery
 	if (camera_GetStatus() == CAMERA_OK)
 	{
-		const uint8_t cameraready[] = "* camera OV7670 ready...";
+		const uint8_t cameraready[] = "* camera OV7720 ready...";
 		//usart_send_text((uint8_t *)&cameraready);
 		//usart_newline();
 
@@ -111,22 +111,22 @@ void camera_config(void)
 #ifdef OV7720
 	ov7720_init();
 	ov7720_setRes(OV7720_QVGA);
-	//ov7720_setColorSpace(OV7720_RGB565);
+	ov7720_setColorSpace(OV7720_RGB565);
 	//ov7720_colorbarpattern();
 
 	// prahovani
-	ov7720_setColorSpace(OV7720_YUV422);
-	ov7720_set_clk_prescaler(0x28);
+	//ov7720_setColorSpace(OV7720_YUV422);
+	//ov7720_set_clk_prescaler(0x28);
 
 #endif
 #endif
 
 	// zalozeni ulohy cteni obrazu
-	if(Scheduler_Add_Task(camera_service, 0, (SCHEDULERPERIOD * 300 MILISEKUND)) == SCH_MAX_TASKS)
+	//if(Scheduler_Add_Task(camera_service, 0, (SCHEDULERPERIOD * 300 MILISEKUND)) == SCH_MAX_TASKS)
 	{
 		// chyba pri zalozeni service
 	}
-	//camera_get_image(TRUE);			// ziskej obrazky ve smycce
+	camera_get_image(TRUE);			// ziskej obrazky ve smycce
 
 	//camera_get_threshold(TRUE, 32);		// ziskej prahovane obrazky ve smycce
 }

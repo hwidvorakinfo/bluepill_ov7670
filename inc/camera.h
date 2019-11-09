@@ -11,8 +11,8 @@
 #include "stm32f10x.h"
 #include "defs.h"
 
-#define OV7670
-//#define OV7720
+//#define OV7670
+#define OV7720
 
 #ifdef OV7670
 #include "ov7670.h"
